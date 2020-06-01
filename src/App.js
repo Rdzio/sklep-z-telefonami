@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import "./scss/style.css";
 
 class App extends Component {
   render() {
     return (
-      <p>cosik dziala</p>
+      <h1>śmiga</h1>
     );
   }
 }
