@@ -15,36 +15,46 @@ class Product extends React.Component {
     } = this.props.product;
     return (
       <div className="border border-dark product-item-space">
-        <img className="product-center" src={require("../assets/phone.png")} alt="telefon"></img>
-        <h2 className="product-center">{title}</h2>
-          <ul className="product-list">
-            <li>
-              <p>
-                Aparat główny:{" "}
-                <strong>
-                  {mainCamera}MP + {secondCamera}MP
-                </strong>
-              </p>
-            </li>
-            <li>
-              <p>
-                Pamięć podręczna: <strong>{ram}GB</strong>
-              </p>
-            </li>
-            <li>
-              <p>
-                Pamięć wbudowana: <strong>{storage}GB</strong>
-              </p>
-            </li>
-            <li>
-              <p>
-                Przekątna ekranu: <strong>{diagonal} cala</strong>
-              </p>
-            </li>
-          </ul>
-        <button className="btn btn-outline-secondary btn-lg btn-block">Czytaj więcej...</button>
-        <h2 className="product-h3">{price} zł</h2>
-        <button className="btn btn-danger btn-lg btn-block">Dodaj do koszyka</button>
+        <img
+          className="product-center"
+          src={require("../assets/phone.png")}
+          alt="telefon"
+        ></img>
+        <h2 className="product-center product-h2">{title}</h2>
+        <ul className="product-list">
+          <li>
+            <p className="product-p">
+              Aparat główny:{" "}
+              <strong className="product-p">
+                {mainCamera}MP + {secondCamera}MP
+              </strong>
+            </p>
+          </li>
+          <li>
+            <p className="product-p">
+              Pamięć podręczna: <strong className="product-p">{ram}GB</strong>
+            </p>
+          </li>
+          <li>
+            <p className="product-p">
+              Pamięć wbudowana:{" "}
+              <strong className="product-p">{storage}GB</strong>
+            </p>
+          </li>
+          <li>
+            <p className="product-p">
+              Przekątna ekranu:{" "}
+              <strong className="product-p">{diagonal} cala</strong>
+            </p>
+          </li>
+        </ul>
+        <button className="btn btn-outline-secondary btn-lg btn-block product-button">
+          Czytaj więcej...
+        </button>
+        <h3 className="product-h3">{price} zł</h3>
+        <button className="btn btn-danger btn-lg btn-block product-button">
+          Dodaj do koszyka
+        </button>
       </div>
     );
   }

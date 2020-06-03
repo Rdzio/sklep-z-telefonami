@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 
-import Header from "./components/Header/Header";
-import Slide from "./components/Slide";
-import ProductList from "./components/Product/ProductList";
-import BrandList from "./components/Brand/BrandList";
-import Advertisement from "./components/Advertisement";
-import Customer from "./components/Customer";
+import Header from "./Components/Header/Header";
+import Slide from "./Components/Slide";
+import ProductList from "./Components/Product/ProductList";
+import BrandList from "./Components/Brand/BrandList";
+import Advertisement from "./Components/Advertisement";
+import Customer from "./Components/Customer";
+import Footer from "./Components/Footer"
 
 class HomePage extends Component {
   render() {
@@ -13,13 +14,11 @@ class HomePage extends Component {
       <div className="glowna">
         <Header />
         <Slide />
-        <br></br>
-        <br></br>
-        <br></br>
         <ProductList />
         <BrandList />
         <Advertisement />
         <Customer />
+        <Footer />
       </div>
     );
   }

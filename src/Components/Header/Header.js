@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "./Logo";
-import SideBar from "../Sidebar";
+import SideBar from "./Sidebar";
 
 export class Header extends React.Component {
   render() {

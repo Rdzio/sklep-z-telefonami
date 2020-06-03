@@ -5,7 +5,7 @@ class Brand extends Component {
     const { /*id,*/ name } = this.props.brand;
     return (
       <button className="btn btn-outline-secondary btn-lg btn-block brand-bt">{name}</button>
-    );
+    );  
   }
 }
 export default Brand;

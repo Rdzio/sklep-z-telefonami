@@ -1,10 +1,25 @@
 div .slick-dots li button:before {
-    width: 16px;
-    height: 16px;
-    content: '';
-    background: $white;
+  width: 16px;
+  height: 16px;
+  content: "";
+  background: $black;
 }
 
 .slick-slider .slick-dots {
-    bottom: 20px;
+  bottom: 20px;
 }
+
+.slick-container {
+  margin: auto;
+}
+
+.slick-img-container {
+  height: 354px;
+  overflow: hidden;
+  margin: 0;
+}
+
+.slick-image {
+}
+
+

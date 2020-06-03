@@ -10,37 +10,39 @@ class Slide extends Component {
       dots: true,
       arrows: false,
       centerMode: true,
-      speed: 500,
-      slidesToShow: 1,
+      speed: 1000,
+      centerPadding: 0,
+      autoplay: false,
+      autoplaySpeed: 5000,
     };
     return (
-      <div>
+      <div className="slick-container">
         <Slider {...settings}>
-          <div>
+          <div className="slick-img-container">
             <img
-              className="test"
-              src={require("./assets/featured1.png")}
+              className="slick-image"
+              src={require("./assets/featured1mobile.png")}
               alt=""
             />
           </div>
-          <div>
+          <div className="slick-img-container">
             <img
-              className="test"
-              src={require("./assets/featured1.png")}
+              className="slick-image"
+              src={require("./assets/featured1mobile.png")}
               alt=""
             />
           </div>
-          <div>
+          <div className="slick-img-container">
             <img
-              className="test"
-              src={require("./assets/featured1.png")}
+              className="slick-image"
+              src={require("./assets/featured1mobile.png")}
               alt=""
             />
           </div>
-          <div>
+          <div className="slick-img-container">
             <img
-              className="test"
-              src={require("./assets/featured1.png")}
+              className="slick-image"
+              src={require("./assets/featured1mobile.png")}
               alt=""
             />
           </div>
