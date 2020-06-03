@@ -1,19 +1,17 @@
 import React, { Component } from "react";
 
-import Header from "./Components/Header/Header";
-import SideBar from "./Components/Sidebar";
-import Slide from "./Components/Slide";
-import ProductList from "./Components/Product/ProductList";
-import BrandList from "./Components/Brand/BrandList";
-import Advertisement from "./Components/Advertisement";
-import Customer from "./Components/Customer";
+import Header from "./components/Header/Header";
+import Slide from "./components/Slide";
+import ProductList from "./components/Product/ProductList";
+import BrandList from "./components/Brand/BrandList";
+import Advertisement from "./components/Advertisement";
+import Customer from "./components/Customer";
 
 class HomePage extends Component {
   render() {
     return (
       <div className="glowna">
         <Header />
-        <SideBar />
         <Slide />
         <br></br>
         <br></br>

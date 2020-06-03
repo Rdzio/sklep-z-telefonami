@@ -1,0 +1,10 @@
+div .slick-dots li button:before {
+    width: 16px;
+    height: 16px;
+    content: '';
+    background: $white;
+}
+
+.slick-slider .slick-dots {
+    bottom: 20px;
+}

@@ -1,10 +1,5 @@
 // custom bootstrap variables
 @import "./partials/variables";
-@import "./partials/burgerMenu";
-@import "./partials/page";
-@import "./partials/product";
-@import "./partials/advertisement";
-@import "./partials/brand";
 
 // bootstrap files
 @import "../bootstrap/scss/functions";
@@ -13,6 +8,31 @@
 @import "../bootstrap/scss/navbar";
 @import "../bootstrap/scss/utilities";
 @import "../bootstrap/scss/buttons";
+
+// **
+* {
+    font-size: 10px;
+    font-family: 'Lato', sans-serif;
+  }
+  
+  html, body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  .btn {
+    outline: none !important;
+  }
+  
+// partials 
+@import "./partials/burgerMenu";
+@import "./partials/page";
+@import "./partials/header";
+@import "./partials/product";
+@import "./partials/advertisement";
+@import "./partials/brand";
+@import "./partials/slick";
 
 // @import "../bootstrap/scss/root";
 // @import "../bootstrap/scss/reboot";

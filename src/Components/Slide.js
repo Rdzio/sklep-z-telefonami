@@ -1,9 +1,9 @@
-import React from "react";
+import React, {Component} from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
-class Slide extends React.Component {
+class Slide extends Component {
   render() {
     const settings = {
       infinite: true,
@@ -21,28 +21,28 @@ class Slide extends React.Component {
               className="test"
               src={require("./assets/featured1.png")}
               alt=""
-            ></img>
+            />
           </div>
           <div>
             <img
               className="test"
               src={require("./assets/featured1.png")}
               alt=""
-            ></img>
+            />
           </div>
           <div>
             <img
               className="test"
               src={require("./assets/featured1.png")}
               alt=""
-            ></img>
+            />
           </div>
           <div>
             <img
               className="test"
               src={require("./assets/featured1.png")}
               alt=""
-            ></img>
+            />
           </div>
         </Slider>
       </div>
