@@ -1,6 +1,6 @@
-.advertisement{
-    height: 354px;
-    vertical-align: middle;
+.advertisement {
+  height: 354px;
+  vertical-align: middle;
 }
 
 .advertisement-image {
@@ -24,4 +24,20 @@
   text-align: center;
   font-size: 22px;
   margin-top: 16px;
+}
+
+@media (min-width: 600px) and (max-width: 1299px) {
+  .advertisement-header {
+    font-size: 36px;
+  }
+
+  .advertisement-p {
+    font-size: 26px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .advertisement-p {
+    font-size: 26px;
+  }
 }

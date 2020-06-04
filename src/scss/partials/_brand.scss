@@ -1,4 +1,4 @@
-.brand{
+.brand {
   margin: 10px;
   padding: 10px;
 }
@@ -9,6 +9,18 @@
   padding-top: 15px;
   padding-bottom: 15px;
   font-size: 24px;
-  color: #1F1F1F;
-  border-color: #1F1F1F;
+  color: #1f1f1f;
+  border-color: #1f1f1f;
+}
+
+@media (min-width: 600px) and (max-width: 1299px) {
+  .brand-bt {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .brand-bt {
+    font-size: 32px;
+  }
 }

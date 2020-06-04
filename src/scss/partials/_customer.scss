@@ -5,6 +5,9 @@
 
 .customer {
   margin: 15px;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .customer-header {
@@ -38,4 +41,53 @@
   font-style: italic;
   font-weight: 300;
   margin-top: 16px;
+}
+
+.customer-mobile{
+  display: none;
+}
+
+@media (min-width: 600px) and (max-width: 1299px) {
+  .customer {
+    margin: auto;
+  }
+
+  .customer-header {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .customer-name {
+    font-size: 28px;
+  }
+
+  .customer-rating {
+    font-size: 28px;
+  }
+
+  .customer-comment {
+    font-size: 26px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .customer {
+    display: inline-block;
+  }
+
+  .customer-header {
+    font-size: 62px;
+  }
+
+  .customer-name {
+    font-size: 32px;
+  }
+
+  .customer-rating {
+    font-size: 32px;
+  }
+
+  .customer-comment {
+    font-size: 32px;
+  }
 }

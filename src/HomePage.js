@@ -5,20 +5,24 @@ import Slide from "./Components/Slide";
 import ProductList from "./Components/Product/ProductList";
 import BrandList from "./Components/Brand/BrandList";
 import Advertisement from "./Components/Advertisement";
-import Customer from "./Components/Customer";
-import Footer from "./Components/Footer"
+import CustomerList from "./Components/Customer/CustomerList";
+import Footer from "./Components/Footer";
 
 class HomePage extends Component {
   render() {
     return (
-      <div className="glowna">
-        <Header />
-        <Slide />
-        <ProductList />
-        <BrandList />
-        <Advertisement />
-        <Customer />
-        <Footer />
+      <div>
+        <div>
+          <Header />
+          <Slide />
+        </div>
+        <div className="glowna">
+          <ProductList />
+          <BrandList />
+          <Advertisement />
+          <CustomerList />
+          <Footer />
+        </div>
       </div>
     );
   }

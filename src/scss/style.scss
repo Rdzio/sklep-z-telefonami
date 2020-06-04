@@ -10,26 +10,10 @@
 @import "../bootstrap/scss/buttons";
 
 // **
-* {
-  font-size: 10px;
-  font-family: "Lato", sans-serif;
-  color: #1F1F1F;
-}
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-  overflow-x: hidden;
-}
-
-.btn {
-  outline: none !important;
-}
 
 // partials
-@import "./partials/burgerMenu";
 @import "./partials/page";
+@import "./partials/burgerMenu";
 @import "./partials/header";
 @import "./partials/product";
 @import "./partials/advertisement";

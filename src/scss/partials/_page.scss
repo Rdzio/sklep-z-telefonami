@@ -1,10 +1,29 @@
+* {
+  font-size: 10px;
+  font-family: "Lato", sans-serif;
+  color: #1f1f1f;
+}
+
 html,
 body {
+  padding: 0;
   margin: 0;
+  overflow-x: hidden;
   scroll-behavior: smooth;
-  font-family: 'Lato'
+}
+
+.btn {
+  outline: none !important;
 }
 
 .bg-black {
-  background-color: #1F1F1F !important;
+  background-color: #1f1f1f !important;
+}
+
+@media (min-width: 1300px) {
+  .glowna {
+    max-width: 1400px;
+    margin: auto;
+  }
+  
 }

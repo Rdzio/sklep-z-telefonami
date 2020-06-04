@@ -43,3 +43,56 @@
   padding-bottom: 14px;
 }
 
+@media (min-width: 600px) and (max-width: 1299px) {
+  .product-space {
+    margin: 20px;
+    padding: 10px;
+  }
+
+  .product-item-space {
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .product-h1 {
+    font-size: 40px;
+  }
+
+  .product-h2 {
+    font-size: 32px;
+  }
+
+  .product-h3 {
+    font-size: 40px;
+  }
+
+  .product-p {
+    font-size: 22px;
+  }
+
+  .product-button {
+    font-size: 26px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .product-h1 {
+    font-size: 62px;
+  }
+
+  .product-h2 {
+    font-size: 36px;
+  }
+
+  .product-h3 {
+    font-size: 36px;
+  }
+
+  .product-p {
+    font-size: 26px;
+  }
+
+  .product-button {
+    font-size: 26px;
+  }
+}
