@@ -16,7 +16,7 @@ class Product extends React.Component {
     return (
       <div className="border border-dark product-item-space">
         <img
-          className="product-center"
+          className="product-center product-image"
           src={require("../assets/phone.png")}
           alt="telefon"
         ></img>
@@ -48,11 +48,11 @@ class Product extends React.Component {
             </p>
           </li>
         </ul>
-        <button className="btn btn-outline-secondary btn-lg btn-block product-button">
+        <button className="btn btn-outline-secondary btn-lg btn-block product-button product-more">
           Czytaj więcej...
         </button>
         <h3 className="product-h3">{price} zł</h3>
-        <button className="btn btn-danger btn-lg btn-block product-button">
+        <button className="btn btn-danger btn-lg btn-block product-button product-add">
           Dodaj do koszyka
         </button>
       </div>

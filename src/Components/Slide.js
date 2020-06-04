@@ -12,7 +12,7 @@ class Slide extends Component {
       centerMode: true,
       speed: 1000,
       centerPadding: 0,
-      autoplay: false,
+      // autoplay: true,
       autoplaySpeed: 5000,
     };
     return (

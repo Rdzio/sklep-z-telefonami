@@ -27,6 +27,20 @@ export const storeProducts = [
     description:
       "Nowy system dwóch aparatów pozwala uchwycić więcej. Najszybszy procesor w historii smartfonów i bateria na cały dzień – jeszcze więcej zdziałasz. A dzięki wideo o jakości nieosiągalnej dla żadnego innego smartfona zapisane wspomnienia będą wyglądać piękniej niż kiedykolwiek.",
   },
+  {
+    id: 3,
+    title: "IPhone 13",
+    img: "",
+    price: 3799,
+    company: "Apple",
+    mainCamera: 12,
+    secondCamera: 12,
+    storage: 128,
+    ram: 4,
+    diagonal: 6.1,
+    description:
+      "Nowy system dwóch aparatów pozwala uchwycić więcej. Najszybszy procesor w historii smartfonów i bateria na cały dzień – jeszcze więcej zdziałasz. A dzięki wideo o jakości nieosiągalnej dla żadnego innego smartfona zapisane wspomnienia będą wyglądać piękniej niż kiedykolwiek.",
+  },
 ];
 
 export const brandList = [

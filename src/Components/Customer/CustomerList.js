@@ -7,18 +7,20 @@ class CustomerList extends React.Component {
     return (
       <div className="customer-space">
         <h2 className="customer-header">Co mówią o nas klienci?</h2>
-        <Customer
-          name="Ania z Gdańska"
-          rating="★★★★★"
-          comment="„Zajebisty sklep”"
-          mobile=""
-        />
-        <Customer
-          name="Ania z Gdańska"
-          rating="★★★★★"
-          comment="„Zajebisty sklep”"
-          mobile="customer-mobile"
-        />
+        <div className="customer-container">
+          <Customer
+            name="Ania z Gdańska"
+            rating="★★★★"
+            comment="„Zajebisty sklep”"
+            mobile=""
+          />
+          <Customer
+            name="Ania z Gdańska"
+            rating="★★★★☆"
+            comment="„Zajebisty sklep”"
+            mobile="customer-mobile"
+          />
+        </div>
       </div>
     );
   }

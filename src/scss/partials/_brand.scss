@@ -3,6 +3,10 @@
   padding: 10px;
 }
 
+.brand-header {
+  font-size: 36px;
+}
+
 .brand-bt {
   border-radius: 0;
   margin-bottom: 10px;
@@ -19,8 +23,35 @@
   }
 }
 
+@media (min-width: 600px) and (max-width: 1299px) {
+  .brand-header {
+    font-size: 40px;
+  }
+}
+
 @media (min-width: 1300px) {
+  .brand {
+    margin: 0;
+    padding: 0;
+  }
+
+  .brand-header {
+    font-size: 62px;
+  }
+
   .brand-bt {
     font-size: 32px;
+    width: 315px;
+    height: 80px;
+  }
+
+  .brand-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .btn-block + .btn-block {
+    margin-top: 0;
   }
 }
