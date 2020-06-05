@@ -51,6 +51,7 @@ class Product extends React.Component {
         <button className="btn btn-outline-secondary btn-lg btn-block product-button product-more">
           Czytaj więcej...
         </button>
+        <div className="product-line"></div>
         <h3 className="product-h3">{price} zł</h3>
         <button className="btn btn-danger btn-lg btn-block product-button product-add">
           Dodaj do koszyka

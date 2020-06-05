@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import Header from "./Components/Header/Header";
-import Slide from "./Components/Slide";
+import Slide from "./Components/Slide/Slide";
 import ProductList from "./Components/Product/ProductList";
 import BrandList from "./Components/Brand/BrandList";
 import Advertisement from "./Components/Advertisement";

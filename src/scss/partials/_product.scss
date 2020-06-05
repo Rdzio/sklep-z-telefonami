@@ -43,6 +43,10 @@
   padding-bottom: 14px;
 }
 
+.product-line {
+  display: none;
+}
+
 @media (min-width: 600px) and (max-width: 1299px) {
   .product-space {
     margin: 20px;
@@ -141,5 +145,16 @@
     grid-column-end: span last-collumn;
     grid-row-start: fifth-row;
     grid-row-end: span sixth-row;
+  }
+
+  .product-line {
+    display: initial;
+    grid-column-start: fifth-collumn;
+    grid-column-end: span sixth-collumn;
+    grid-row-start: first-row;
+    grid-row-end: span last-row;
+    border-left: 1px solid #1F1F1F;
+    height: 80%;
+    align-self: center;
   }
 }

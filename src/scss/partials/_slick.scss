@@ -21,4 +21,119 @@ div .slick-dots li button:before {
 
 .slick-image {
   margin: auto;
+  transform: translate(-1000px, -100px);
+}
+
+.banner-container {
+  position: absolute;
+  max-width: 1400px;
+  top: 2px;
+  margin-left: 10px;
+  margin-top: 40px;
+}
+
+.banner-label {
+  font-size: 28px;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.banner-sublabel {
+  font-size: 22px;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  margin-top: 6px;
+  margin-bottom: 20px;
+}
+
+.banner-list {
+  list-style-type: square;
+}
+
+.banner-list-li {
+  color: white;
+}
+
+.banner-list-element {
+  font-size: 18px;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.banner-button {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .banner-container {
+    margin-left: 2%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1299px) {
+  .slick-image {
+    transform: translate(-600px, -100px);
+  }
+
+  .slick-img-container {
+    height: 404px;
+  }
+
+  .banner-label {
+    font-size: 32px;
+  }
+
+  .banner-sublabel {
+    font-size: 26px;
+  }
+
+  .banner-list-element {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .slick-image {
+    transform: none;
+  }
+
+  .slick-img-container {
+    height: 770px;
+  }
+
+  .banner-container {
+    margin-top: 195px;
+  }
+
+  .banner-label {
+    font-size: 56px;
+  }
+
+  .banner-sublabel {
+    font-size: 36px;
+    margin-bottom: 36px;
+  }
+
+  .banner-list-element {
+    font-size: 26px;
+    margin-top: 12px;
+  }
+
+  .banner-button {
+    display: initial;
+    width: 280px;
+    height: 60px;
+    border-radius: 0;
+    color: white;
+    border-color: white;
+    font-size: 26px;
+    margin-top: 58px;
+  }
 }

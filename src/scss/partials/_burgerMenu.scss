@@ -28,6 +28,8 @@
 /* Color/shape of close button cross */
 .bm-cross {
   background: #bdc3c7;
+
+  display: none;
 }
 
 /*
@@ -41,20 +43,20 @@
 
 /* General sidebar styles */
 .bm-menu {
-  background: #373a47;
+  background: #1f1f1f;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
 
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
-  fill: #373a47;
+  fill: #1f1f1f;
 }
 
 /* Wrapper for item list */
 .bm-item-list {
   color: #b8b7ad;
-  padding: 0.8em;
+  padding: 0;
 }
 
 /* Individual item */
@@ -65,6 +67,11 @@
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
+}
+
+.bm-link {
+  font-size: 26px;
+  padding: 4px;
 }
 
 @media (min-width: 600px) and (max-width: 1299px) {
@@ -78,7 +85,7 @@
   .bm-burger-button {
     display: none;
   }
-  
+
   .bm-menu-wrap {
     display: none;
   }
