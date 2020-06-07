@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
-import Header from "./Components/Header/Header";
-import Slide from "./Components/Slide/Slide";
-import ProductList from "./Components/Product/ProductList";
-import BrandList from "./Components/Brand/BrandList";
-import Advertisement from "./Components/Advertisement";
-import CustomerList from "./Components/Customer/CustomerList";
-import Footer from "./Components/Footer";
+import Header from "./components/Header/Header";
+import Slide from "./components/Slide/Slide";
+import ProductList from "./components/Product/ProductList";
+import BrandList from "./components/Brand/BrandList";
+import Advertisement from "./components/Advertisement";
+import CustomerList from "./components/Customer/CustomerList";
+import Footer from "./components/Footer";
 
 class HomePage extends Component {
   render() {

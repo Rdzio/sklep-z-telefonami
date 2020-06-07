@@ -5,16 +5,10 @@ import { slide as Menu } from "react-burger-menu";
 export default (props) => {
   return (
     <Menu className="sidebar">
-      <NavLink
-        className="menu-item"
-        to="/"
-        onClick={window.scrollTo(0, 0)}
-        activestyle={{ color: "#f8c917ff" }}
-      >
-        <span className="text-decoration-none text-white bm-link" >Strona Główna</span>
-      </NavLink>
-
-      <br />
+      <NavLink to="/" className="menu-item" onClick={window.scrollTo(0, 0)}>Strona główna</NavLink>
+      <NavLink to="/kontakt" className="menu-item">Kontakt</NavLink>
+      <NavLink to="/regulamin" className="menu-item">Regulamin</NavLink>
+      <NavLink to="/koszyk" className="menu-item">Koszyk</NavLink>
     </Menu>
   );
 };

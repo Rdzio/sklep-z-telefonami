@@ -10,15 +10,14 @@ class CustomerList extends React.Component {
         <div className="customer-container">
           <Customer
             name="Ania z Gdańska"
-            rating="★★★★"
-            comment="„Zajebisty sklep”"
-            mobile=""
+            rating="★★★★☆"
+            comment="„Świetny sklep”"
           />
           <Customer
-            name="Ania z Gdańska"
-            rating="★★★★☆"
-            comment="„Zajebisty sklep”"
-            mobile="customer-mobile"
+            name="Jakub z Kwiatonowic"
+            rating="★★★★★"
+            comment="„Jeden z lepszych sklepów. Pomaga mi w pracy oraz karmieniu żółwia. Ułatwia kontakt z żoną, a także ucieczki przed psem sąsiada. Mój fiat 126p dzięki temu skepowi zyskał dodatkowe 10 koni mechanicznych co pozwala na bezproblemowe wycieczki międzygalaktycznem komputer uruchamia minecrafta w 2000000 klatek na sekundę, a ojciec wraca trzeźwy i w godzinach wczesnych wieczornych!
+            Ciężko w to uwierzyć, ale ten sklep pomaga w leczeniu raka i czkawki! Niesamowite! Polecam serdecznie!”"
           />
         </div>
       </div>

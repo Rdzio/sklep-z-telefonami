@@ -3,11 +3,10 @@ import React from "react";
 class Image extends React.Component {
   render() {
     return (
-      <img
-        className="slick-image"
-        src={this.props.img}
-        alt=""
-      />
+      <picture className="slick-image">
+        <source media="(min-width: 600px)" srcSet={this.props.img} />
+        <img src={this.props.imgMobile} alt="mi10" className="slick-img--mob"></img>
+      </picture>
     );
   }
 }

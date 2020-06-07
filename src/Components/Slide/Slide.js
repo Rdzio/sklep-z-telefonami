@@ -14,14 +14,15 @@ class Slide extends Component {
       centerMode: true,
       speed: 1500,
       centerPadding: 0,
-      // autoplay: true,
-      autoplaySpeed: 6000,
+      autoplay: true,
+      autoplaySpeed: 3000,
     };
     return (
       <div className="slick-container">
         <Slider {...settings}>
           <div className="slick-img-container">
-            <Image img={require("../assets/featured1.png")} />
+            <Image img={require("../assets/featured1.png")} imgMobile={require("../assets/mi10-mob.jpg")} />
+            <div className="container">
             <Banner
               label="Światła. Kamera. Akcja"
               sublabel="Seria Mi 10 już w sprzedaży"
@@ -31,42 +32,35 @@ class Slide extends Component {
               li4="Głośniki stereo"
               li5="24 miesiące gwarancji na ekran"
             />
+            </div>
           </div>
           <div className="slick-img-container">
-            <Image img={require("../assets/featured1.png")} />
+            <Image img={require("../assets/galaxys20f.jpg")} imgMobile={require("../assets/sam-mob.png")} />
+            <div className="container">
             <Banner
-              label="Światła. Kamera. Akcja"
-              sublabel="Seria Mi 10 już w sprzedaży"
+              label="Nowy. Szybszy. Lepszy"
+              sublabel="Samsung Galaxy S20 już w sprzedaży!"
               li1="Aparat  108MP"
-              li2="Nagrywanie w 8K"
+              li2="Zaawansowany Zoom"
               li3="Snapdragon 865 + 8GB RAM"
-              li4="Głośniki stereo"
+              li4="Sieć 5G"
               li5="24 miesiące gwarancji na ekran"
             />
+            </div>
           </div>
           <div className="slick-img-container">
-            <Image img={require("../assets/featured1.png")} />
+            <Image img={require("../assets/iphone.jpg")} imgMobile={require("../assets/iphone-mob.png")} />
+            <div className="container">
             <Banner
-              label="Światła. Kamera. Akcja"
-              sublabel="Seria Mi 10 już w sprzedaży"
-              li1="Aparat  108MP"
+              label="Najpopularniejszy telefon 2019"
+              sublabel="iPhone 11 nadal w sprzedaży!"
+              li1="Ultra szeroka kamera"
               li2="Nagrywanie w 8K"
-              li3="Snapdragon 865 + 8GB RAM"
-              li4="Głośniki stereo"
+              li3="Tryb portretowy"
+              li4="FaceID"
               li5="24 miesiące gwarancji na ekran"
             />
-          </div>
-          <div className="slick-img-container">
-            <Image img={require("../assets/featured1.png")} />
-            <Banner
-              label="Światła. Kamera. Akcja"
-              sublabel="Seria Mi 10 już w sprzedaży"
-              li1="Aparat  108MP"
-              li2="Nagrywanie w 8K"
-              li3="Snapdragon 865 + 8GB RAM"
-              li4="Głośniki stereo"
-              li5="24 miesiące gwarancji na ekran"
-            />
+            </div>
           </div>
         </Slider>
       </div>

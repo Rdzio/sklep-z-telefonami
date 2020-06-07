@@ -26,11 +26,21 @@
 
 .product-h3 {
   font-size: 36px;
+  margin: 18px 0;
   text-align: center;
 }
 
 .product-list {
   list-style-type: square;
+  padding-left: 16px;
+
+  li {
+    p {
+      margin: 6px 0;
+      font-weight: 300;
+    }
+  }
+
 }
 
 .product-p {
@@ -38,6 +48,7 @@
 }
 
 .product-button {
+  margin-top: 16px;
   font-size: 22px;
   padding-top: 14px;
   padding-bottom: 14px;
@@ -45,6 +56,12 @@
 
 .product-line {
   display: none;
+}
+
+.btn-danger {
+  background: #E30613;
+  text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
 @media (min-width: 600px) and (max-width: 1299px) {
@@ -91,6 +108,8 @@
     display: grid;
     grid-template-columns: [first-collumn] 50px [second-collumn] 240px [third-collumn] 50px [fourh-collumn] 450px [fifth-collumn] 1px [sixth-collumn] 50px [seventh-collumn] 330px [last-collumn];
     grid-template-rows: [first-row] 44px [second-row] 36px [third-row] 60px [fourh-row] 12px [fifth-row] 60px [sixth-row] 12px [last-row];
+    justify-content: center;
+    padding-right: 50px;
   }
 
   .product-h1 {
@@ -131,6 +150,7 @@
   .product-button {
     font-size: 26px;
     padding-top: 10px;
+    margin: 0;
   }
 
   .product-more {

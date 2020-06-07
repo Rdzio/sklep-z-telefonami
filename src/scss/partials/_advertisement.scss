@@ -1,9 +1,10 @@
-.advertisement {
+.reminder {
   height: 354px;
   vertical-align: middle;
+  margin: 30px 0 20px 0;
 }
 
-.advertisement-image {
+.reminder-image {
   text-align: center;
   display: block;
   margin-left: auto;
@@ -11,7 +12,7 @@
   padding-top: 50px;
 }
 
-.advertisement-header {
+.reminder-header {
   color: white;
   text-align: center;
   font-size: 32px;
@@ -19,25 +20,56 @@
   margin-top: 16px;
 }
 
-.advertisement-p {
+.reminder-p {
   color: white;
   text-align: center;
   font-size: 22px;
   margin-top: 16px;
+
+  strong {
+    font-weight: 700;
+    color: white;
+    font-size: 22px;
+  }
 }
 
 @media (min-width: 600px) and (max-width: 1299px) {
-  .advertisement-header {
+  .reminder-header {
     font-size: 36px;
   }
 
-  .advertisement-p {
+  .reminder-p {
     font-size: 26px;
+
+    strong {
+      font-size: 26px;
+    }
   }
 }
 
 @media (min-width: 1300px) {
-  .advertisement-p {
+  .reminder {
+    display: flex;
+    height: auto;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .reminder-image {
+    padding: 0;
+    margin: 60px;
+  }
+
+  .reminder-header {
+    text-align: left;
+  }
+  
+  .reminder-p {
     font-size: 26px;
+
+    strong {
+      font-size: 26px;
+    }
   }
 }

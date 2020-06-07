@@ -4,15 +4,11 @@ class Customer extends React.Component {
 
   render() {
     return (
-      <div className={"customer " + this.props.mobile}>
-        <figure className="customer-figure">
-          <img
-            className="customer-image"
-            src={require("../assets/customer.png")}
-            alt="Klient"
-          />
-        </figure>
-        <p className="customer-name">{this.props.name}</p>
+      <div className={"customer "}>
+        <div className="d-flex">
+          <img src={require('../assets/no-icon.svg')} alt="" />
+          <p className="customer-name">{this.props.name}</p>
+        </div>
         <p className="customer-rating">{this.props.rating}</p>
         <p className="customer-comment">{this.props.comment}</p>
       </div>

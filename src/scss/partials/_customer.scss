@@ -4,7 +4,7 @@
 }
 
 .customer {
-  margin: 15px;
+  margin: 15px 15px 30px 15px;
   max-width: 350px;
   margin-left: auto;
   margin-right: auto;
@@ -27,7 +27,7 @@
 .customer-name {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 0;
+  margin: 0 0 0 12px;
 }
 
 .customer-rating {
@@ -45,6 +45,10 @@
 
 .customer-mobile {
   display: none;
+}
+
+.d-flex {
+  display: flex;
 }
 
 @media (min-width: 600px) and (max-width: 1299px) {
@@ -72,10 +76,9 @@
 
 @media (min-width: 1300px) {
   .customer {
-    margin-left: 0;
-    display: grid;
-    grid-template-columns: [first-collumn] 250px [second-collumn] 45px [third-collumn] 330px [last-collumn];
-    grid-template-rows: [first-row] 38px [second-row] 50px [third-row] auto [last-row];
+    margin: 0;
+    width: 600px;
+    max-width: 600px;
   }
 
   .customer-header {
@@ -86,37 +89,18 @@
     height: 250px;
   }
 
-  .customer-figure {
-    grid-column-start: first-collumn;
-    grid-column-end: span second-collumn;
-    grid-row-start: first-row;
-    grid-row-end: span last-row;
-  }
-
   .customer-name {
     font-size: 32px;
-    grid-column-start: third-collumn;
-    grid-column-end: span last-collumn;
-    grid-row-start: first-row;
-    grid-row-end: span second-row;
     align-self: start;
     margin-top: 0;
   }
 
   .customer-rating {
     font-size: 32px;
-    grid-column-start: third-collumn;
-    grid-column-end: span last-collumn;
-    grid-row-start: second-row;
-    grid-row-end: span third-row;
   }
 
   .customer-comment {
     font-size: 32px;
-    grid-column-start: third-collumn;
-    grid-column-end: span last-collumn;
-    grid-row-start: third-row;
-    grid-row-end: span last-row;
   }
 
   .customer-container {
