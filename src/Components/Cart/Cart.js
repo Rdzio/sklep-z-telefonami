@@ -21,22 +21,43 @@ class Cart extends Component {
     this.props.subtractQuantity(id);
   };
 
+  updateTotalValue() {
+    let value = 0;
+
+    if (document.querySelector('.cart-item-space')) {
+      Array.from(document.querySelectorAll('.cart-item-space')).forEach(props => {
+        value += Number(props.querySelector('.item-quantity').textContent) * Number(props.querySelector('.item-price').textContent);
+      });
+
+      document.querySelector('.total-cost').innerHTML = value;
+    }
+  }
+
+  componentDidMount() {
+    this.updateTotalValue();
+  }
+
+  componentDidUpdate() {
+    this.updateTotalValue();
+  }
+
   render() {
     let addedItems = this.props.items.length ? (
       this.props.items.map((item) => {
         return (
-          <div className="border border-dark cart-item-space">
+          <div className="border border-dark cart-item-space" key={item.title}>
             <img src={item.img} alt="" />
             <h2 className="cart-item-name">{item.title}</h2>
-            <p className="cart-item-quantity">{item.quantity} szt.</p>
-            <Link to="/koszyk">
+            <p className="cart-item-quantity"><span className="item-quantity">{item.quantity}</span> szt.</p>
+            <div className="item-count-box">
+            <Link to="/koszyk" className="btn-content--minus-parent">
               <i
                 onClick={() => {
                   this.handleSubtractQuantity(item.id);
                 }}
               >
                 <button className="btn btn-outline-secondary cart-button-minus">
-                  -
+                  <p className="btn-content btn-content--minus">-</p>
                 </button>
               </i>
             </Link>
@@ -46,18 +67,22 @@ class Cart extends Component {
                   this.handleAddQuantity(item.id);
                 }}
               >
-                <button className="btn btn-danger cart-button-plus">+</button>
+                <button className="btn btn-danger cart-button-plus">
+                  <p className="btn-content">+</p>
+                </button>
               </i>
             </Link>
+            </div>
             <button
               className="btn btn-danger btn-block cart-button-remove"
               onClick={() => {
                 this.handleRemove(item.id);
+                this.updateTotalValue();
               }}
             >
-              X
+              <p>X</p>
             </button>
-            <h3 className="cart-item-pirce">{item.price}zł</h3>
+            <h3 className="cart-item-pirce"><span className="item-price">{item.price}</span>zł</h3>
           </div>
         );
       })
@@ -70,6 +95,10 @@ class Cart extends Component {
         <div className="cart-space">
           <h1 className="cart-header">Twoje produkty</h1>
           {addedItems}
+          <h4 className="to-pay">Do zapłaty: <strong><span className="total-cost">0</span>zł</strong></h4>
+          <button className="btn btn-danger basket-proceed">
+            <p>Przejdź dalej</p>
+          </button>
         </div>
         <Footer />
       </div>
