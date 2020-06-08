@@ -1,6 +1,6 @@
 .cart-space {
-  margin: 10px;
-  padding: 10px;
+  margin: 10px 0;
+  padding: 10px 0;
 }
 
 .cart-item-space {
@@ -47,4 +47,16 @@
 
 .cart-test {
   text-align: center;
+}
+
+.cart-header {
+  margin: 38px 0 18px;
+}
+
+@media (max-width: 1299px) {
+  .basket-proceed-parent {
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 20px;
+  }
 }

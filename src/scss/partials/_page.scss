@@ -17,14 +17,13 @@ body {
   margin: 0 auto;
 }
 
-.d-xl-flex {
-  display: flex;
-  flex-direction: column;
-}
-
 .btn {
   outline: none !important;
   border-radius: 0;
+}
+
+a, a:hover {
+  text-decoration: none;
 }
 
 .bg-black {

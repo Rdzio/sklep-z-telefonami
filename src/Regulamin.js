@@ -10,10 +10,12 @@ class Regulamin extends Component {
     return (
       <div>
           <Header />
-          <main>
-              <h1>Jeszcze nie ma regulaminu</h1>
-          </main>
-          <Footer />
+          <div className="container">
+            <main>
+                <h1>Jeszcze nie ma regulaminu</h1>
+            </main>
+            <Footer />
+          </div>
       </div>
     );
   }

@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 export class Header extends React.Component {
   render() {
     return (
-      <header className="navbar navbar-expand-lg py-md-3 bg-black">
+      <header className="navbar navbar-expand-lg bg-black">
         <SideBar />
         <div className="navbar-elements">
 
@@ -22,7 +22,7 @@ export class Header extends React.Component {
             <NavLink to="/regulamin" className="navbar-buttons">Regulamin</NavLink>
             <NavLink to="/koszyk" className="navbar-buttons">
               Koszyk
-              <img src={require("../assets/cart.svg")} alt="Logo" style={{filter: "invert(1)", transform: "translate(10px, 4px)"}}></img>
+              <img src={require("../assets/cart.svg")} alt="Logo" style={{filter: "invert(1)", transform: "translate(10px, -2px)"}}></img>
             </NavLink>
           </div>
         </div>

@@ -28,7 +28,7 @@
 .menu-item {
   color: white;
   text-decoration: none;
-  outline: hidden;
+  outline: none;
   font-size: 21px;
   margin-bottom: 6px;
 }
@@ -74,6 +74,12 @@
 
   .navbar-buttons {
     display: inline-block;
+    color: white;
+  }
+
+  .navbar-buttons:hover {
+    color: white;
+    text-decoration: none;
   }
 
   .navbar-cart {

@@ -101,7 +101,7 @@ class Cart extends Component {
             <div className="phones-parent">
               {addedItems}
             </div>
-            <div className="d-xl-flex basket-proceed-parent">
+            <div className="d-flex basket-proceed-parent">
               <h4 className="to-pay">Do zapłaty: <strong><span className="total-cost">0</span>zł</strong></h4>
               <button className="btn btn-danger basket-proceed">
                 <p>Przejdź dalej</p>

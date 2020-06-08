@@ -1,5 +1,5 @@
 main {
-    margin: 60px 10px 80px;
+    margin: 60px 0 80px;
 
     h1 {
         font-size: 32px;
@@ -16,10 +16,16 @@ main {
         font-size: 18px;
         margin-bottom: 8px;
         text-decoration: none;
+        color: #1f1f1f;
 
         img {
             margin-right: 12px;
         }
+    }
+
+    .info-box:hover {
+        color: #1f1f1f;
+        text-decoration: none;
     }
 }
 

@@ -21,7 +21,9 @@ class HomePage extends Component {
           <BrandList />
           <Advertisement />
           <CustomerList />
-          <Footer />
+          <div className="container">
+            <Footer />
+          </div>
         </div>
       </div>
     );

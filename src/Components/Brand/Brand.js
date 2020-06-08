@@ -2,7 +2,7 @@ import React, {Component} from "react";
 
 class Brand extends Component {
   render() {
-    const { /*id,*/ name } = this.props.brand;
+    const { name } = this.props.brand;
     return (
       <button className="btn btn-outline-secondary btn-lg btn-block brand-bt">{name}</button>
     );  
