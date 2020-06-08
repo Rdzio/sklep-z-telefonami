@@ -1,21 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Switch, Route} from "react-router-dom";
-import "./scss/style.scss"
+import { Provider } from "react-redux";
+import { createStore } from "redux";
 
-import HomePage from "./HomePage";
-import Kontakt from "./Kontakt";
-import Regulamin from "./Regulamin";
-import Koszyk from "./Koszyk";
+import "./scss/style.scss";
+import App from "./App";
+import CartCore from "./components/Cart/CartCore";
+
+const store = createStore(CartCore);
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Switch>
-      <Route path="/koszyk" component={Koszyk} />
-      <Route path="/regulamin" component={Regulamin} />
-      <Route path="/kontakt" component={Kontakt} />
-      <Route path="/" component={HomePage} exact />
-    </Switch>
-  </BrowserRouter>,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById("root")
 );

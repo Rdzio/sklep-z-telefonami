@@ -1,9 +1,16 @@
 import React from "react";
+import { connect } from "react-redux";
+
+import { addToCart } from "../Cart/CartActions";
 
 class Product extends React.Component {
+  handleClick = (id) => {
+    this.props.addToCart(id);
+  };
+
   render() {
     const {
-      /*id,*/
+      id,
       title,
       /*img,*/
       price,
@@ -53,11 +60,30 @@ class Product extends React.Component {
         </button>
         <div className="product-line"></div>
         <h3 className="product-h3">{price} zł</h3>
-        <button className="btn btn-danger btn-lg btn-block product-button product-add">
+        <button
+          className="btn btn-danger btn-lg btn-block product-button product-add"
+          onClick={() => {
+            this.handleClick(id);
+          }}
+        >
           Dodaj do koszyka
         </button>
       </div>
     );
   }
 }
-export default Product;
+
+const mapStateToProps = (state) => {
+  return {
+    items: state.items,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToCart: (id) => {
+      dispatch(addToCart(id));
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Product);
