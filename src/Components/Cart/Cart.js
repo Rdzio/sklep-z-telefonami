@@ -30,6 +30,9 @@ class Cart extends Component {
       });
 
       document.querySelector('.total-cost').innerHTML = value;
+    } else {
+      document.querySelector('.total-cost').innerHTML = 0;
+      document.querySelector('.basket-proceed').disabled = true;
     }
   }
 
@@ -87,20 +90,26 @@ class Cart extends Component {
         );
       })
     ) : (
-      <p className="cart-item-quantity">Pusto</p>
+      <p className="cart-item-quantity--empty">Koszyk jest pusty!</p>
     );
     return (
       <div>
         <Header />
-        <div className="cart-space">
-          <h1 className="cart-header">Twoje produkty</h1>
-          {addedItems}
-          <h4 className="to-pay">Do zapłaty: <strong><span className="total-cost">0</span>zł</strong></h4>
-          <button className="btn btn-danger basket-proceed">
-            <p>Przejdź dalej</p>
-          </button>
+        <div className="container">
+          <div className="cart-space">
+            <h1 className="cart-header">Twoje produkty</h1>
+            <div className="phones-parent">
+              {addedItems}
+            </div>
+            <div className="d-xl-flex basket-proceed-parent">
+              <h4 className="to-pay">Do zapłaty: <strong><span className="total-cost">0</span>zł</strong></h4>
+              <button className="btn btn-danger basket-proceed">
+                <p>Przejdź dalej</p>
+              </button>
+            </div>
+          </div>
+          <Footer />
         </div>
-        <Footer />
       </div>
     );
   }

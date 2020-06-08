@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 import { addToCart } from "../Cart/CartActions";
 
@@ -61,13 +62,32 @@ class Product extends React.Component {
         <div className="product-line"></div>
         <h3 className="product-h3">{price} zł</h3>
         <button
-          className="btn btn-danger btn-lg btn-block product-button product-add"
+          className="btn btn-danger btn-lg btn-block product-button product-add" type="button"
+          data-toggle="modal" data-target="#question"
           onClick={() => {
             this.handleClick(id);
+
           }}
         >
           Dodaj do koszyka
         </button>
+        {/* <div class="modal fade" id="question" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                Co chcesz zrobić?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kontynuuj zakupy</button>
+                <button type="button" class="btn btn-primary">
+                  <NavLink to="/koszyk">
+                    Przejdź do koszyka
+                  </NavLink>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div> */}
       </div>
     );
   }
