@@ -40,17 +40,17 @@ class Cart extends Component {
   //   }
   // }
 
-  // componentDidMount() {
-  //   this.updateTotalValue();
-  //   console.log("Cart state | after mount");
-  //   console.log(this.props.items);
-  // }
+  componentDidUpdate() {
+    if (this.props.total > 0)
+      document.querySelector(".basket-proceed").disabled = false;
+    else document.querySelector(".basket-proceed").disabled = true;
+  }
 
-  // componentDidUpdate() {
-  //   this.updateTotalValue();
-  //   console.log("Cart state | after update");
-  //   console.log(this.props.items);
-  // }
+  componentDidMount() {
+    if (this.props.total > 0)
+      document.querySelector(".basket-proceed").disabled = false;
+    else document.querySelector(".basket-proceed").disabled = true;
+  }
 
   render() {
     let addedItems = this.props.items.length ? (
