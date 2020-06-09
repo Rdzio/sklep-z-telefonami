@@ -21,36 +21,36 @@ class Cart extends Component {
     this.props.subtractQuantity(id);
   };
 
-  updateTotalValue() {
-    let value = 0;
+  // updateTotalValue() {
+  //   let value = 0;
 
-    if (document.querySelector(".cart-item-space")) {
-      Array.from(document.querySelectorAll(".cart-item-space")).forEach(
-        (props) => {
-          value +=
-            Number(props.querySelector(".item-quantity").textContent) *
-            Number(props.querySelector(".item-price").textContent);
-        }
-      );
+  //   if (document.querySelector(".cart-item-space")) {
+  //     Array.from(document.querySelectorAll(".cart-item-space")).forEach(
+  //       (props) => {
+  //         value +=
+  //           Number(props.querySelector(".item-quantity").textContent) *
+  //           Number(props.querySelector(".item-price").textContent);
+  //       }
+  //     );
 
-      document.querySelector(".total-cost").innerHTML = value;
-    } else {
-      document.querySelector(".total-cost").innerHTML = 0;
-      document.querySelector(".basket-proceed").disabled = true;
-    }
-  }
+  //     document.querySelector(".total-cost").innerHTML = value;
+  //   } else {
+  //     document.querySelector(".total-cost").innerHTML = 0;
+  //     document.querySelector(".basket-proceed").disabled = true;
+  //   }
+  // }
 
-  componentDidMount() {
-    this.updateTotalValue();
-    // console.log("Cart state | after mount");
-    // console.log(this.props.items);
-  }
+  // componentDidMount() {
+  //   this.updateTotalValue();
+  //   console.log("Cart state | after mount");
+  //   console.log(this.props.items);
+  // }
 
-  componentDidUpdate() {
-    this.updateTotalValue();
-    // console.log("Cart state | after update");
-    // console.log(this.props.items);
-  }
+  // componentDidUpdate() {
+  //   this.updateTotalValue();
+  //   console.log("Cart state | after update");
+  //   console.log(this.props.items);
+  // }
 
   render() {
     let addedItems = this.props.items.length ? (
@@ -90,7 +90,6 @@ class Cart extends Component {
               className="btn btn-danger btn-block cart-button-remove"
               onClick={() => {
                 this.handleRemove(item.id);
-                this.updateTotalValue();
               }}
             >
               <p>X</p>
@@ -115,7 +114,7 @@ class Cart extends Component {
               <h4 className="to-pay">
                 Do zapłaty:{" "}
                 <strong>
-                  <span className="total-cost">0</span>zł
+                  <span className="total-cost">{this.props.total}</span>zł
                 </strong>
               </h4>
               <button className="btn btn-danger basket-proceed">
@@ -133,6 +132,7 @@ class Cart extends Component {
 const mapStateToProps = (state) => {
   return {
     items: state.addedItems,
+    total: state.total,
   };
 };
 
@@ -142,8 +142,6 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(removeItem(id));
     },
     addQuantity: (id) => {
-      // console.log("ACTION: DISPATCH addQuantity")
-      // console.log(id)
       dispatch(addQuantity(id));
     },
     subtractQuantity: (id) => {
