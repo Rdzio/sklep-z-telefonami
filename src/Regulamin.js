@@ -12,7 +12,7 @@ class Regulamin extends Component {
           <Header />
           <div className="container">
             <main>
-                <h1>Regulamin</h1>
+                <h1>Regulamin</h1><br/>
                 <p>
                 <strong>I. Postanowienia ogólne</strong><br/>
                     1. W regulaminie określiliśmy zasady, na jakich prowadzimy sprzedaż za pośrednictwem sklepu internetowego pod adresem sklep-z-telefonami.web.app.<br/>
