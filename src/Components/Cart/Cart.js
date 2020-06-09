@@ -24,24 +24,32 @@ class Cart extends Component {
   updateTotalValue() {
     let value = 0;
 
-    if (document.querySelector('.cart-item-space')) {
-      Array.from(document.querySelectorAll('.cart-item-space')).forEach(props => {
-        value += Number(props.querySelector('.item-quantity').textContent) * Number(props.querySelector('.item-price').textContent);
-      });
+    if (document.querySelector(".cart-item-space")) {
+      Array.from(document.querySelectorAll(".cart-item-space")).forEach(
+        (props) => {
+          value +=
+            Number(props.querySelector(".item-quantity").textContent) *
+            Number(props.querySelector(".item-price").textContent);
+        }
+      );
 
-      document.querySelector('.total-cost').innerHTML = value;
+      document.querySelector(".total-cost").innerHTML = value;
     } else {
-      document.querySelector('.total-cost').innerHTML = 0;
-      document.querySelector('.basket-proceed').disabled = true;
+      document.querySelector(".total-cost").innerHTML = 0;
+      document.querySelector(".basket-proceed").disabled = true;
     }
   }
 
   componentDidMount() {
     this.updateTotalValue();
+    // console.log("Cart state | after mount");
+    // console.log(this.props.items);
   }
 
   componentDidUpdate() {
     this.updateTotalValue();
+    // console.log("Cart state | after update");
+    // console.log(this.props.items);
   }
 
   render() {
@@ -51,30 +59,32 @@ class Cart extends Component {
           <div className="border border-dark cart-item-space" key={item.title}>
             <img src={item.img} alt="" />
             <h2 className="cart-item-name">{item.title}</h2>
-            <p className="cart-item-quantity"><span className="item-quantity">{item.quantity}</span> szt.</p>
+            <p className="cart-item-quantity">
+              <span className="item-quantity">{item.quantity}</span> szt.
+            </p>
             <div className="item-count-box">
-            <Link to="/koszyk" className="btn-content--minus-parent">
-              <i
-                onClick={() => {
-                  this.handleSubtractQuantity(item.id);
-                }}
-              >
-                <button className="btn btn-outline-secondary cart-button-minus">
-                  <p className="btn-content btn-content--minus">-</p>
-                </button>
-              </i>
-            </Link>
-            <Link to="/koszyk">
-              <i
-                onClick={() => {
-                  this.handleAddQuantity(item.id);
-                }}
-              >
-                <button className="btn btn-danger cart-button-plus">
-                  <p className="btn-content">+</p>
-                </button>
-              </i>
-            </Link>
+              <Link to="/koszyk" className="btn-content--minus-parent">
+                <i
+                  onClick={() => {
+                    this.handleSubtractQuantity(item.id);
+                  }}
+                >
+                  <button className="btn btn-outline-secondary cart-button-minus">
+                    <p className="btn-content btn-content--minus">-</p>
+                  </button>
+                </i>
+              </Link>
+              <Link to="/koszyk">
+                <i
+                  onClick={() => {
+                    this.handleAddQuantity(item.id);
+                  }}
+                >
+                  <button className="btn btn-danger cart-button-plus">
+                    <p className="btn-content">+</p>
+                  </button>
+                </i>
+              </Link>
             </div>
             <button
               className="btn btn-danger btn-block cart-button-remove"
@@ -85,7 +95,9 @@ class Cart extends Component {
             >
               <p>X</p>
             </button>
-            <h3 className="cart-item-pirce"><span className="item-price">{item.price}</span>zł</h3>
+            <h3 className="cart-item-pirce">
+              <span className="item-price">{item.price}</span>zł
+            </h3>
           </div>
         );
       })
@@ -98,11 +110,14 @@ class Cart extends Component {
         <div className="container">
           <div className="cart-space">
             <h1 className="cart-header">Twoje produkty</h1>
-            <div className="phones-parent">
-              {addedItems}
-            </div>
+            <div className="phones-parent">{addedItems}</div>
             <div className="d-flex basket-proceed-parent">
-              <h4 className="to-pay">Do zapłaty: <strong><span className="total-cost">0</span>zł</strong></h4>
+              <h4 className="to-pay">
+                Do zapłaty:{" "}
+                <strong>
+                  <span className="total-cost">0</span>zł
+                </strong>
+              </h4>
               <button className="btn btn-danger basket-proceed">
                 <p>Przejdź dalej</p>
               </button>
@@ -127,6 +142,8 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(removeItem(id));
     },
     addQuantity: (id) => {
+      // console.log("ACTION: DISPATCH addQuantity")
+      // console.log(id)
       dispatch(addQuantity(id));
     },
     subtractQuantity: (id) => {
