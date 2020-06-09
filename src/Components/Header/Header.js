@@ -1,6 +1,7 @@
 import React from "react";
 import SideBar from "./Sidebar";
 import { NavLink } from "react-router-dom";
+import { connect } from "react-redux";
 
 export class Header extends React.Component {
   render() {
@@ -23,6 +24,7 @@ export class Header extends React.Component {
             <NavLink to="/koszyk" className="navbar-buttons">
               Koszyk
               <img src={require("../assets/cart.svg")} alt="Logo" style={{filter: "invert(1)", transform: "translate(10px, -2px)"}}></img>
+              {this.props.itemsAdded}
             </NavLink>
           </div>
         </div>
@@ -31,4 +33,10 @@ export class Header extends React.Component {
   }
 }
 
-export default Header;
+const mapStateToProps = (state) => {
+  return {
+    itemsAdded: state.itemsAdded,
+  };
+};
+
+export default connect(mapStateToProps)(Header);

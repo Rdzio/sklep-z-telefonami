@@ -11,7 +11,7 @@ const persistConfig = {
   key: "root",
   storage,
 //   debug: true,
-  whitelist: ["addedItems", "total"],
+  whitelist: ["addedItems", "total", "itemsAdded"],
   stateReconciler: autoMergeLevel2,
 };
 

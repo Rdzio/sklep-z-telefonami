@@ -4,6 +4,7 @@ const initState = {
   items: storeProducts,
   addedItems: [],
   total: 0,
+  itemsAdded: 0,
 };
 
 const cartReducer = (state = initState, action) => {
@@ -18,6 +19,7 @@ const cartReducer = (state = initState, action) => {
           ...state,
           addedItems: [...state.addedItems, addedItem],
           total: addTotal,
+          itemsAdded: state.itemsAdded + 1,
         };
       } else {
         return {
@@ -28,6 +30,7 @@ const cartReducer = (state = initState, action) => {
               : item
           ),
           total: addTotal,
+          itemsAdded: state.itemsAdded + 1,
         };
       }
 
@@ -36,10 +39,12 @@ const cartReducer = (state = initState, action) => {
       let itemToRemove = state.addedItems.find((item) => action.id === item.id);
       let removeTotal =
         state.total - itemToRemove.price * itemToRemove.quantity;
+      let removeTotalItems = state.itemsAdded - itemToRemove.quantity;
       return {
         ...state,
         addedItems: new_items,
         total: removeTotal,
+        itemsAdded: removeTotalItems,
       };
 
     case "ADD_QUANTITY":
@@ -53,6 +58,7 @@ const cartReducer = (state = initState, action) => {
             : item
         ),
         total: addTotalQ,
+        itemsAdded: state.itemsAdded + 1,
       };
 
     case "SUB_QUANTITY":
@@ -66,6 +72,7 @@ const cartReducer = (state = initState, action) => {
           ...state,
           addedItems: new_items,
           total: subTotal,
+          itemsAdded: state.itemsAdded - 1,
         };
       } else {
         return {
@@ -79,6 +86,7 @@ const cartReducer = (state = initState, action) => {
               : item
           ),
           total: subTotal,
+          itemsAdded: state.itemsAdded - 1,
         };
       }
 
