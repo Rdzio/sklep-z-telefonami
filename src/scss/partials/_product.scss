@@ -59,6 +59,10 @@
   display: none;
 }
 
+.product-more:hover {
+  text-decoration: none;
+}
+
 .btn-danger {
   background: #E30613;
   text-transform: uppercase;
@@ -186,4 +190,16 @@
     height: 80%;
     align-self: center;
   }
+}
+
+.added-to-basket--info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  border: 1px solid #1f1f1f;
+  font-size: 26px;
+  padding: 4px 22px;
+  pointer-events: none;
+  z-index: 100;
 }

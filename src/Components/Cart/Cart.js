@@ -12,7 +12,6 @@ class Cart extends Component {
     super(props);
     this.state = {
       delivery: "20zł",
-      total: props.total
     }
   }
 
