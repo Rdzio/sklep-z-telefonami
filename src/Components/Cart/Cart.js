@@ -16,6 +16,10 @@ class Cart extends Component {
     }
   }
 
+  handleClick = () => {
+    this.props.total > 999 ? this.setState({delivery: "Za darmo!"}) : this.setState({delivery: "20zł"});
+  }
+
   //to remove the item completely
   handleRemove = (id) => {
     this.props.removeItem(id);
