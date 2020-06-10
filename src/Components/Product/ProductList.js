@@ -7,7 +7,7 @@ class ProductList extends React.Component {
   render() {
     return (
       <div className="product-space">
-        <h1 className="product-h1">Popularne w tym miesiącu</h1>
+        <h1 className="product-h1">Polecamy w tym miesiącu</h1>
         {this.props.items.map((product) => {
           return <Product key={product.id} product={product} />;
         })}
