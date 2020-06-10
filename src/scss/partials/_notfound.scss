@@ -1,0 +1,70 @@
+.notfound-space {
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+}
+
+.notfound-header {
+  font-size: 36px;
+}
+
+.notfound-subheader {
+  font-size: 28px;
+}
+
+.notfound-p {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.notfound-button {
+  margin-top: 40px;
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 60px;
+  max-width: 300px;
+  font-size: 22px;
+}
+
+@media (min-width: 600px) and (max-width: 1299px) {
+  .notfound-header {
+    font-size: 40px;
+  }
+
+  .notfound-subheader {
+    font-size: 32px;
+  }
+
+  .notfound-p {
+    font-size: 22px;
+  }
+
+  .notfound-button {
+    height: 70px;
+    max-width: 350px;
+    font-size: 26px;
+  }
+}
+
+@media (min-width: 1300px) {
+    .notfound-header {
+      font-size: 40px;
+    }
+  
+    .notfound-subheader {
+      font-size: 32px;
+    }
+  
+    .notfound-p {
+      font-size: 24px;
+    }
+  
+    .notfound-button {
+      height: 70px;
+      max-width: 350px;
+      font-size: 28px;
+    }
+  }
+  

@@ -85,6 +85,21 @@
   .navbar-cart {
     display: inline-block;
   }
+  
+  .navbar-item-counter {
+    display: inline-block;
+    transform: translateX(20px);
+    color: white;
+    border-radius: 100%;
+    background-color: #e30613;
+    width: 27px;
+    height: 27px;
+    text-align: center;
+  }
+
+  .navbar-item-counter-inactive {
+    display: none;
+  }
 }
 
 @media (max-width: 1299px) {

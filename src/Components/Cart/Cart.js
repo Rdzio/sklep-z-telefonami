@@ -21,25 +21,6 @@ class Cart extends Component {
     this.props.subtractQuantity(id);
   };
 
-  // updateTotalValue() {
-  //   let value = 0;
-
-  //   if (document.querySelector(".cart-item-space")) {
-  //     Array.from(document.querySelectorAll(".cart-item-space")).forEach(
-  //       (props) => {
-  //         value +=
-  //           Number(props.querySelector(".item-quantity").textContent) *
-  //           Number(props.querySelector(".item-price").textContent);
-  //       }
-  //     );
-
-  //     document.querySelector(".total-cost").innerHTML = value;
-  //   } else {
-  //     document.querySelector(".total-cost").innerHTML = 0;
-  //     document.querySelector(".basket-proceed").disabled = true;
-  //   }
-  // }
-
   componentDidUpdate() {
     if (this.props.total > 0)
       document.querySelector(".basket-proceed").disabled = false;

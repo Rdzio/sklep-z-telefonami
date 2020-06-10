@@ -4,9 +4,11 @@
 // adapting to different screen sizes, for use in media queries.
 
 $grid-breakpoints: (
-  xs: 320px, // mobile
-  sm: 576px,
-  md: 768px, // tablet
+  xs: 320px,
+  // mobile
+    sm: 576px,
+  md: 768px,
+  // tablet
   lg: 992px,
   xl: 1400px // desktop
 );
@@ -16,8 +18,24 @@ $grid-breakpoints: (
 // Define the maximum width of `.container` for different screen sizes.
 
 $container-max-widths: (
-  sm: 300px, // mobile
-  md: 720px,
+  sm: 300px,
+  // mobile
+    md: 720px,
   lg: 960px,
   xl: 1400px // desktop
 );
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: 700 !important;
+}

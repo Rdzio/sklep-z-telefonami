@@ -1,5 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+
 // import { NavLink } from "react-router-dom";
 
 import { addToCart } from "../Cart/CartActions";
@@ -9,11 +11,15 @@ class Product extends React.Component {
     this.props.addToCart(id);
   };
 
+  handleClickDetails = (id) => {
+    this.props.addToCart(id);
+  };
+
   render() {
     const {
       id,
       title,
-      /*img,*/
+      img,
       price,
       mainCamera,
       secondCamera,
@@ -56,16 +62,22 @@ class Product extends React.Component {
             </p>
           </li>
         </ul>
-        <button className="btn btn-outline-secondary btn-lg btn-block product-button product-more">
-          Czytaj więcej...
-        </button>
+        <Link
+        className="product-more"
+          to={{
+            pathname: `/szczegoly/`+id+`-`+title.toLowerCase().split(" ").join("-"),
+          }}
+        >
+          <button className="btn btn-outline-secondary btn-lg btn-block product-button product-more">
+            Czytaj więcej...
+          </button>
+        </Link>
         <div className="product-line"></div>
         <h3 className="product-h3">{price} zł</h3>
         <button
           className="btn btn-danger btn-lg btn-block product-button product-add"
           onClick={() => {
             this.handleClick(id);
-
           }}
         >
           Dodaj do koszyka
