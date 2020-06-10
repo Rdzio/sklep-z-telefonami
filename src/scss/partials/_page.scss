@@ -31,10 +31,15 @@ a:hover {
   background-color: #1f1f1f !important;
 }
 
+<<<<<<< HEAD
 @media (min-width: 576px) and (max-width: 767px) {
   .container {
     max-width: 576px !important;
   }
+=======
+h1, h2 {
+  font-weight: 700 !important;
+>>>>>>> f4eab008b1818f1546efe71bab08c4c99965c98a
 }
 
 @media (min-width: 1300px) {

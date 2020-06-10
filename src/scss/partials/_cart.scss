@@ -54,11 +54,172 @@
   margin: 38px 0 18px;
 }
 
+form {
+  h2 {
+    font-size: 36px;
+    margin: 40px 0 18px 0;
+  }
+
+  .input--parent {
+    position: relative;
+    width: 100%;
+    height: 52px;
+    margin-bottom: 18px;
+
+    input {
+      height: 100%;
+      width: 100%;
+      padding: 10px 20px;
+      font-size: 22px;
+      border: 1px solid #1f1f1f;
+      outline: none;
+      border-radius: 0;
+    }
+
+    label {
+      position: absolute;
+      top: 50%;
+      left: 21px;
+      transform: translateY(-50%);
+      font-size: 22px;
+      margin: 0;
+      background: white;
+      transition: .12s all;
+    }
+
+    input:focus ~ label,
+    input:valid ~ label {
+      top: 0;
+      font-size: 16px;
+    }
+
+    input:focus {
+      border-color: #E30613;
+    }
+  }
+
+  .input--checkbox--parent {
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 22px;
+      height: 22px;
+      position: absolute;
+      z-index: 10;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    input:checked ~ span:after {
+      content: '';
+      background: url('../../components/assets/checkmark.svg');
+      background-repeat: no-repeat;
+      width: 21px;
+      height: 17px;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+      object-fit: cover;
+    }
+
+    span {
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      border: 1px solid #1f1f1f;
+      position: relative;
+      cursor: pointer;
+    }
+
+    label {
+      font-size: 22px;
+      margin: 0 0 0 12px;
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+}
+
 @media (max-width: 1299px) {
   .basket-proceed-parent {
     justify-content: flex-start;
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 50px;
     align-items: center;
+
+    h4 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    input {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (min-width: 1300px) {
+  form {
+    h2 {
+      font-size: 42px;
+      margin: 60px 0 36px 0;
+    }
+
+    .form--xl-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+
+      .input--parent {
+        margin-bottom: 0;
+        height: 70px;
+
+        input {
+          padding: 10px 30px;
+          font-size: 26px;
+        }
+
+        label {
+          left: 31px;
+          font-size: 26px;
+        }
+      }
+    }
+
+    .input--checkbox--parent {
+      input, span {
+        width: 38px;
+        height: 38px;
+      }
+
+      input:checked ~ span:after {
+        transform: translate(-50%, -50%) scale(1.8);
+      }
+
+      label {
+        font-size: 26px;
+        margin: 0 0 0 30px;
+      }
+    }
+  }
+
+  .cart-item-quantity, .cart-item-quantity--empty {
+    font-size: 26px !important;
+  }
+
+  .basket-proceed-parent {
+    margin-top: 80px !important;
+
+    h4, input {
+      font-size: 26px !important;
+    }
+
+    input {
+      width: 300px !important;
+    }
   }
 }

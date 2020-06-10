@@ -8,6 +8,14 @@ import Header from "../Header/Header";
 import Footer from "../Footer";
 
 class Cart extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      delivery: "20zł",
+      total: props.total
+    }
+  }
+
   //to remove the item completely
   handleRemove = (id) => {
     this.props.removeItem(id);
@@ -21,6 +29,32 @@ class Cart extends Component {
     this.props.subtractQuantity(id);
   };
 
+<<<<<<< HEAD
+=======
+  handleClick = () => {
+    this.props.total > 999 ? this.setState({delivery: "Za darmo!"}) : this.setState({delivery: "20zł"});
+  }
+
+  // updateTotalValue() {
+  //   let value = 0;
+
+  //   if (document.querySelector(".cart-item-space")) {
+  //     Array.from(document.querySelectorAll(".cart-item-space")).forEach(
+  //       (props) => {
+  //         value +=
+  //           Number(props.querySelector(".item-quantity").textContent) *
+  //           Number(props.querySelector(".item-price").textContent);
+  //       }
+  //     );
+
+  //     document.querySelector(".total-cost").innerHTML = value;
+  //   } else {
+  //     document.querySelector(".total-cost").innerHTML = 0;
+  //     document.querySelector(".basket-proceed").disabled = true;
+  //   }
+  // }
+
+>>>>>>> f4eab008b1818f1546efe71bab08c4c99965c98a
   componentDidUpdate() {
     if (this.props.total > 0)
       document.querySelector(".basket-proceed").disabled = false;
@@ -31,6 +65,8 @@ class Cart extends Component {
     if (this.props.total > 0)
       document.querySelector(".basket-proceed").disabled = false;
     else document.querySelector(".basket-proceed").disabled = true;
+
+    this.props.total > 999 ? this.setState({delivery: "Za darmo!"}) : this.setState({delivery: "20zł"});
   }
 
   render() {
@@ -48,6 +84,7 @@ class Cart extends Component {
                 <i
                   onClick={() => {
                     this.handleSubtractQuantity(item.id);
+                    this.handleClick();
                   }}
                 >
                   <button className="btn btn-outline-secondary cart-button-minus">
@@ -59,6 +96,7 @@ class Cart extends Component {
                 <i
                   onClick={() => {
                     this.handleAddQuantity(item.id);
+                    this.handleClick();
                   }}
                 >
                   <button className="btn btn-danger cart-button-plus">
@@ -71,6 +109,7 @@ class Cart extends Component {
               className="btn btn-danger btn-block cart-button-remove"
               onClick={() => {
                 this.handleRemove(item.id);
+                this.handleClick();
               }}
             >
               <p>X</p>
@@ -91,17 +130,56 @@ class Cart extends Component {
           <div className="cart-space">
             <h1 className="cart-header">Twoje produkty</h1>
             <div className="phones-parent">{addedItems}</div>
-            <div className="d-flex basket-proceed-parent">
-              <h4 className="to-pay">
-                Do zapłaty:{" "}
-                <strong>
-                  <span className="total-cost">{this.props.total}</span>zł
-                </strong>
-              </h4>
-              <button className="btn btn-danger basket-proceed">
-                <p>Przejdź dalej</p>
-              </button>
-            </div>
+            <form>
+              <h2>Uzupełnij dane do wysyłki</h2>
+              <div className="form--xl-grid">
+                <div className="input--parent">
+                  <input type="text" id="input--imie" name="imie" className="form__input" required />
+                  <label htmlFor="input--imie">Imię i nazwisko</label>
+                </div>
+                <div className="input--parent">
+                  <input type="text" id="input--ulica" name="ulica" className="form__input" required />
+                  <label htmlFor="input--ulica">Ulica i numer</label>
+                </div>
+                <div className="input--parent">
+                  <input type="text" id="input--kod" name="kod" className="form__input" required />
+                  <label htmlFor="input--kod">Kod pocztowy</label>
+                </div>
+                <div className="input--parent">
+                  <input type="text" id="input--miasto" name="miasto" className="form__input" required />
+                  <label htmlFor="input--miasto">Miasto</label>
+                </div>
+                <div className="input--parent">
+                  <input type="text" id="input--email" name="email" className="form__input" required />
+                  <label htmlFor="input--email">Adres e-mail</label>
+                </div>
+                <div className="input--parent">
+                  <input type="number" id="input--nrtel" name="nrtel" className="form__input" required />
+                  <label htmlFor="input--nrtel">Numer tel.</label>
+                </div>
+              </div>
+              <h2>Sposób dostawy</h2>
+              <div className="input--checkbox--parent">
+                <input type="checkbox" required name="dostawa" id="input--dostawa" className="form__input form__input--checkbox" />
+                <span className="real-checkbox"></span>
+                <label htmlFor="input--dostawa">Dostawa kurierem ({this.state.delivery})</label>
+              </div>
+              <h2>Regulamin</h2>
+              <div className="input--checkbox--parent">
+                <input type="checkbox" required name="regulamin" id="input--regulamin" className="form__input form__input--checkbox" />
+                <span className="real-checkbox"></span>
+                <label htmlFor="input--regulamin">Akceptuję regulamin sklepu</label>
+              </div>
+              <div className="d-flex basket-proceed-parent">
+                <h4 className="to-pay">
+                  Do zapłaty:{" "}
+                  <strong>
+                    <span className="total-cost">{this.props.total}</span>zł
+                  </strong>
+                </h4>
+                <input type="submit" className="btn btn-danger basket-proceed" value="Złóż zamówienie"></input>
+              </div>
+            </form>
           </div>
           <Footer />
         </div>
