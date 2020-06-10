@@ -29,32 +29,6 @@ class Cart extends Component {
     this.props.subtractQuantity(id);
   };
 
-<<<<<<< HEAD
-=======
-  handleClick = () => {
-    this.props.total > 999 ? this.setState({delivery: "Za darmo!"}) : this.setState({delivery: "20zł"});
-  }
-
-  // updateTotalValue() {
-  //   let value = 0;
-
-  //   if (document.querySelector(".cart-item-space")) {
-  //     Array.from(document.querySelectorAll(".cart-item-space")).forEach(
-  //       (props) => {
-  //         value +=
-  //           Number(props.querySelector(".item-quantity").textContent) *
-  //           Number(props.querySelector(".item-price").textContent);
-  //       }
-  //     );
-
-  //     document.querySelector(".total-cost").innerHTML = value;
-  //   } else {
-  //     document.querySelector(".total-cost").innerHTML = 0;
-  //     document.querySelector(".basket-proceed").disabled = true;
-  //   }
-  // }
-
->>>>>>> f4eab008b1818f1546efe71bab08c4c99965c98a
   componentDidUpdate() {
     if (this.props.total > 0)
       document.querySelector(".basket-proceed").disabled = false;
