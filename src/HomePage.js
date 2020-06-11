@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import Header from "./components/Header/Header";
 import Slide from "./components/Slide/Slide";
-import ProductList from "./components/Product/ProductList";
+import RecommendedList from "./components/Product/RecommendedList";
 import BrandList from "./components/Brand/BrandList";
 import Advertisement from "./components/Advertisement";
 import CustomerList from "./components/Customer/CustomerList";
@@ -17,7 +17,7 @@ class HomePage extends Component {
           <Slide />
         </div>
         <div className="glowna">
-          <ProductList />
+          <RecommendedList />
           <BrandList />
           <Advertisement />
           <CustomerList />

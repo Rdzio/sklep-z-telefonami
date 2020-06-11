@@ -1,6 +1,9 @@
-import { storeProducts } from "../../data";
+// import { storeProducts } from "../../data";
+
+// use only on deployed version!
+/*
 import { db } from "../../Firebase/Firebase";
-const ref = db.ref("telefony");
+let ref = db.ref("telefony");
 const telefony = [];
 ref.on("value", (obiekt) => {
   const obj = obiekt.val();
@@ -10,16 +13,33 @@ ref.on("value", (obiekt) => {
     }
   }
 });
+const ref2 = db.ref("polecane");
+let polecane = [];
+ref2.on("value", (obiekt) => {
+  polecane = obiekt.val();
+});
+*/
+
+import { database } from "../../database.js";
+import { polecane } from "../../polecane.js";
+
+// for local testing
+const telefony = [];
+for (let prop in database) {
+  for (let key in database[prop]) {
+    telefony.push(database[prop][key]);
+  }
+}
 
 const initState = {
   items: telefony,
   addedItems: [],
   total: 0,
   itemsAdded: 0,
+  recommended: polecane,
 };
 
 const cartReducer = (state = initState, action) => {
-  console.log(state.items);
   switch (action.type) {
     case "ADD_TO_CART":
       let addedItem = state.items.find((item) => item.id === action.id);
