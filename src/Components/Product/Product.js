@@ -11,13 +11,13 @@ class Product extends React.Component {
     super(props);
     this.state = {
       position: {},
-      id: props.product.id
-    }
+      id: props.product.id,
+    };
   }
 
   handleClick = (id) => {
     this.props.addToCart(id);
-    this.setState({id: id});
+    this.setState({ id: id });
     alert("Dodano do koszyka!");
   };
 
@@ -85,12 +85,21 @@ class Product extends React.Component {
           </li>
         </ul>
         <Link
-        className="product-more"
+          className="product-more"
           to={{
-            pathname: `/szczegoly/`+id+`-`+title.toLowerCase().split(" ").join("-"),
+            pathname:
+              `/szczegoly/` +
+              id +
+              `-` +
+              title.toLowerCase().split(" ").join("-"),
           }}
         >
-          <button className="btn btn-outline-secondary btn-lg btn-block product-button product-more">
+          <button
+            className="btn btn-outline-secondary btn-lg btn-block product-button product-more"
+            onClick={() => {
+              window.scrollTo(0, 0);
+            }}
+          >
             Czytaj więcej...
           </button>
         </Link>
