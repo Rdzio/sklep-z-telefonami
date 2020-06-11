@@ -3,7 +3,6 @@
 // use only on deployed version!
 /*
 import { db } from "../../Firebase/Firebase";
-<<<<<<< HEAD
 let ref = db.ref("telefony");
 const telefony = [];
 ref.on("value", (obiekt) => {
@@ -31,34 +30,6 @@ for (let prop in database) {
     telefony.push(database[prop][key]);
   }
 }
-=======
-const ref = db.ref("telefony");
-// const telefony = [];
-// ref.on("value", (obiekt) => {
-//   const obj = obiekt.val();
-//   for (let prop in obj) {
-//     for (let key in obj[prop]) {
-//       telefony.push(obj[prop][key]);
-//     }
-//   }
-// });
-
-// const getPhones = () => {
-//   let phones = [];
-
-//   ref.on("value", (obiekt) => {
-//     const obj = obiekt.val();
-//     for (let prop in obj) {
-//       for (let key in obj[prop]) {
-//         phones.push(obj[prop][key]);
-//       }
-//     }
-//   });
-
-//   return phones;
-// }
-
->>>>>>> 7be386f7df443dfdb19e4dbdfe9beacbe5e7c1fb
 
 const initState = {
   addedItems: [],
@@ -68,24 +39,6 @@ const initState = {
 };
 
 const cartReducer = (state = initState, action) => {
-<<<<<<< HEAD
-=======
-  let phones = [];
-
-  ref.on("value", (obiekt) => {
-    const obj = obiekt.val();
-    for (let prop in obj) {
-      for (let key in obj[prop]) {
-        phones.push(obj[prop][key]);
-      }
-    }
-  });
-
-  state.items = phones;
-
-  console.log(state);
-
->>>>>>> 7be386f7df443dfdb19e4dbdfe9beacbe5e7c1fb
   switch (action.type) {
     case "ADD_TO_CART":
       let addedItem = state.items.find((item) => item.id === action.id);
