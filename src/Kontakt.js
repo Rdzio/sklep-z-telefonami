@@ -15,11 +15,11 @@ class Kontakt extends Component {
                 <h1>Zapraszamy do kontaktu</h1>
                 <h4>Pracujemy od Poniedziałku do Piątku w godzinach 8:00 - 16:00</h4>
                 <a href="callto: 563 736 832" className="d-flex info-box">
-                  <img src={require('./components/assets/phone.svg')} alt="phone" />
+                  <img src={require('./img/phone.svg')} alt="phone" />
                   573 823 738
                 </a>
                 <a href="mailto: gorkasklep@gmail.com" className="d-flex info-box">
-                  <img src={require('./components/assets/mail.svg')} alt="mail" />
+                  <img src={require('./img/mail.svg')} alt="mail" />
                   gorkasklep@gmail.com
                 </a>
             </main>

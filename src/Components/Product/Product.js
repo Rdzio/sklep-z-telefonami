@@ -41,7 +41,6 @@ class Product extends React.Component {
     const {
       id,
       title,
-      img,
       price,
       mainCamera,
       secondCamera,
@@ -53,10 +52,11 @@ class Product extends React.Component {
       <div className="border border-dark product-item-space">
         <img
           className="product-center product-image"
-          src={require("../assets/phone.png")}
+          src={require(`../../img/phones/${this.props.img}`)}
           alt="telefon"
         ></img>
-        <h2 className="product-center product-h2">{title}</h2>
+        {console.log(this.props.img)}
+        <h2 className="product-h2">{title}</h2>
         <ul className="product-list">
           <li>
             <p className="product-p">

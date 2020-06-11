@@ -21,7 +21,7 @@ class Slide extends Component {
       <div className="slick-container">
         <Slider {...settings}>
           <div className="slick-img-container">
-            <Image img={require("../assets/featured1.png")} imgMobile={require("../assets/mi10-mob.jpg")} />
+            <Image img={require("../../img/featured1.png")} imgMobile={require("../../img/mi10-mob.jpg")} />
             <div className="container">
             <Banner
               label="Światła. Kamera. Akcja"
@@ -35,7 +35,7 @@ class Slide extends Component {
             </div>
           </div>
           <div className="slick-img-container">
-            <Image img={require("../assets/galaxys20f.jpg")} imgMobile={require("../assets/sam-mob.png")} />
+            <Image img={require("../../img/galaxys20f.jpg")} imgMobile={require("../../img/sam-mob.png")} />
             <div className="container">
             <Banner
               label="Nowy. Szybszy. Lepszy"
@@ -49,7 +49,7 @@ class Slide extends Component {
             </div>
           </div>
           <div className="slick-img-container">
-            <Image img={require("../assets/iphone.jpg")} imgMobile={require("../assets/iphone-mob.png")} />
+            <Image img={require("../../img/iphone.jpg")} imgMobile={require("../../img/iphone-mob.png")} />
             <div className="container">
             <Banner
               label="Najpopularniejszy telefon 2019"

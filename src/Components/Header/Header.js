@@ -27,10 +27,10 @@ export class Header extends React.Component {
             <picture>
               <source
                 media="(min-width: 1300px)"
-                srcSet={require("../assets/logo-pc.png")}
+                srcSet={require("../../img/logo-pc.png")}
               />
               <img
-                src={require("../assets/logo-mob.png")}
+                src={require("../../img/logo-mob.png")}
                 className="logo-img"
                 alt="logo"
                 style={{ height: "100%" }}
@@ -51,7 +51,7 @@ export class Header extends React.Component {
             <NavLink to="/koszyk" className="navbar-buttons">
               Koszyk
               <img
-                src={require("../assets/cart.svg")}
+                src={require("../../img/cart.svg")}
                 alt="Logo"
                 style={{
                   filter: "invert(1)",

@@ -29,7 +29,7 @@ class Details extends React.Component {
               <div className="details-flex-img">
                 <img
                   className="details-center details-img"
-                  src={require("../assets/phone.png")}
+                  src={require("../../img/phone.png")}
                   alt=""
                 ></img>
               </div>

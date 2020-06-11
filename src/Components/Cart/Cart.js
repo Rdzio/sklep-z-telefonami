@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { removeItem, addQuantity, subtractQuantity } from "./CartActions";
 
-import { auth, db } from "../../Firebase/Firebase";
+import { db } from "../../Firebase/Firebase";
 
 import "../../scss/partials/kontakt.scss";
 import Header from "../Header/Header";

@@ -6,7 +6,7 @@ class Customer extends React.Component {
     return (
       <div className={"customer "}>
         <div className="d-flex">
-          <img src={require('../assets/no-icon.svg')} alt="" />
+          <img src={require('../../img/no-icon.svg')} alt="" />
           <p className="customer-name">{this.props.name}</p>
         </div>
         <p className="customer-rating">{this.props.rating}</p>
