@@ -14,19 +14,40 @@ class Cart extends Component {
     super(props);
     this.state = {
       delivery: "20zł",
-
       email: "",
       imie: "",
       kod: "",
       miasto: "",
       nrtel: "",
       ulica: "",
-      zaplacono: "",
-      data: "",
+      zaplacono: this.props.total,
+      data: `${new Date().getHours()}:${new Date().getMinutes()}, ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`,
       zamowienie: {}
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+
+    const rootRef = db.ref('zamowienia');
+
+    const { delivery, email, imie, kod, miasto, nrtel, ulica, zaplacono, data, zamowienie} = this.state;
+
+    rootRef.push().set({
+      dostawa: delivery,
+      email: email,
+      imie: imie,
+      kod: kod,
+      miasto: miasto,
+      nrtel: nrtel,
+      ulica: ulica,
+      zaplacono: zaplacono,
+      data: data,
+      zamowienie: zamowienie
+    });
   }
 
   handleClick = () => {
@@ -35,6 +56,7 @@ class Cart extends Component {
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
+    this.setOrder();
   }
 
   setOrder = () => {
@@ -47,6 +69,7 @@ class Cart extends Component {
         sztuk: prop.quantity
       };
     }
+
     this.setState({zamowienie: order});
   }
 
@@ -54,16 +77,19 @@ class Cart extends Component {
   handleRemove = (id) => {
     this.props.removeItem(id);
     this.setOrder();
+    this.setState({zaplacono: this.props.total});
   };
   //to add the quantity
   handleAddQuantity = (id) => {
     this.props.addQuantity(id);
     this.setOrder();
+    this.setState({zaplacono: this.props.total});
   };
   //to substruct from the quantity
   handleSubtractQuantity = (id) => {
     this.props.subtractQuantity(id);
     this.setOrder();
+    this.setState({zaplacono: this.props.total});
   };
 
   componentDidUpdate() {
@@ -78,7 +104,6 @@ class Cart extends Component {
     else document.querySelector(".basket-proceed").disabled = true;
 
     this.props.total > 999 ? this.setState({delivery: "Za darmo!"}) : this.setState({delivery: "20zł"});
-    this.setOrder();
   }
 
   render() {
@@ -142,7 +167,7 @@ class Cart extends Component {
           <div className="cart-space">
             <h1 className="cart-header">Twoje produkty</h1>
             <div className="phones-parent">{addedItems}</div>
-            <form>
+            <form method="post" onSubmit={this.handleSubmit}>
               <h2>Uzupełnij dane do wysyłki</h2>
               <div className="form--xl-grid">
                 <div className="input--parent">

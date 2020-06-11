@@ -1,54 +1,24 @@
 import { storeProducts } from "../../data";
 import { db } from "../../Firebase/Firebase";
 const ref = db.ref("telefony");
-// const telefony = [];
-// ref.on("value", (obiekt) => {
-//   const obj = obiekt.val();
-//   for (let prop in obj) {
-//     for (let key in obj[prop]) {
-//       telefony.push(obj[prop][key]);
-//     }
-//   }
-// });
-
-// const getPhones = () => {
-//   let phones = [];
-
-//   ref.on("value", (obiekt) => {
-//     const obj = obiekt.val();
-//     for (let prop in obj) {
-//       for (let key in obj[prop]) {
-//         phones.push(obj[prop][key]);
-//       }
-//     }
-//   });
-
-//   return phones;
-// }
-
+const telefony = [];
+ref.on("value", (obiekt) => {
+  const obj = obiekt.val();
+  for (let prop in obj) {
+    for (let key in obj[prop]) {
+      telefony.push(obj[prop][key]);
+    }
+  }
+});
 
 const initState = {
+  items: telefony,
   addedItems: [],
   total: 0,
   itemsAdded: 0,
 };
 
 const cartReducer = (state = initState, action) => {
-  let phones = [];
-
-  ref.on("value", (obiekt) => {
-    const obj = obiekt.val();
-    for (let prop in obj) {
-      for (let key in obj[prop]) {
-        phones.push(obj[prop][key]);
-      }
-    }
-  });
-
-  state.items = phones;
-
-  console.log(state);
-
   switch (action.type) {
     case "ADD_TO_CART":
       let addedItem = state.items.find((item) => item.id === action.id);
