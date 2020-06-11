@@ -6,7 +6,7 @@ import Header from "./components/Header/Header";
 
 import Footer from "./components/Footer";
 
-class Kontakt extends Component {
+class ThankYou extends Component {
   render() {
     return (
       <div>
@@ -26,4 +26,4 @@ class Kontakt extends Component {
   }
 }
 
-export default Kontakt;
+export default ThankYou;
