@@ -11,7 +11,7 @@ class CustomerList extends React.Component {
           <Customer
             name="Ania z Gdańska"
             rating="★★★★☆"
-            comment="„Świetny sklep”"
+            comment="„Zamówienie zrealizowana bardzo szybko. Paczka dotarła cała.”"
           />
           <Customer
             name="Jakub z Kwiatonowic"

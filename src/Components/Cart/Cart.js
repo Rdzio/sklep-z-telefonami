@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { removeItem, addQuantity, subtractQuantity } from "./CartActions";
 
+import { auth, db } from "../../Firebase/Firebase";
+
 import "../../scss/partials/kontakt.scss";
 import Header from "../Header/Header";
 import Footer from "../Footer";
@@ -12,24 +14,56 @@ class Cart extends Component {
     super(props);
     this.state = {
       delivery: "20zł",
-    }
+
+      email: "",
+      imie: "",
+      kod: "",
+      miasto: "",
+      nrtel: "",
+      ulica: "",
+      zaplacono: "",
+      data: "",
+      zamowienie: {}
+    };
+
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleClick = () => {
     this.props.total > 999 ? this.setState({delivery: "Za darmo!"}) : this.setState({delivery: "20zł"});
   }
 
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+
+  setOrder = () => {
+    const order = {};
+
+    for (let prop of this.props.items) {
+      let title = prop.title.toLowerCase().split(' ').join('-');
+      order[title] = {
+        cena: prop.price,
+        sztuk: prop.quantity
+      };
+    }
+    this.setState({zamowienie: order});
+  }
+
   //to remove the item completely
   handleRemove = (id) => {
     this.props.removeItem(id);
+    this.setOrder();
   };
   //to add the quantity
   handleAddQuantity = (id) => {
     this.props.addQuantity(id);
+    this.setOrder();
   };
   //to substruct from the quantity
   handleSubtractQuantity = (id) => {
     this.props.subtractQuantity(id);
+    this.setOrder();
   };
 
   componentDidUpdate() {
@@ -44,6 +78,7 @@ class Cart extends Component {
     else document.querySelector(".basket-proceed").disabled = true;
 
     this.props.total > 999 ? this.setState({delivery: "Za darmo!"}) : this.setState({delivery: "20zł"});
+    this.setOrder();
   }
 
   render() {
@@ -111,27 +146,27 @@ class Cart extends Component {
               <h2>Uzupełnij dane do wysyłki</h2>
               <div className="form--xl-grid">
                 <div className="input--parent">
-                  <input type="text" id="input--imie" name="imie" className="form__input" required />
+                  <input type="text" id="input--imie" name="imie" className="form__input" required onChange={this.handleChange} />
                   <label htmlFor="input--imie">Imię i nazwisko</label>
                 </div>
                 <div className="input--parent">
-                  <input type="text" id="input--ulica" name="ulica" className="form__input" required />
+                  <input type="text" id="input--ulica" name="ulica" className="form__input" required onChange={this.handleChange} />
                   <label htmlFor="input--ulica">Ulica i numer</label>
                 </div>
                 <div className="input--parent">
-                  <input type="text" id="input--kod" name="kod" className="form__input" required />
+                  <input type="text" id="input--kod" name="kod" className="form__input" required onChange={this.handleChange} />
                   <label htmlFor="input--kod">Kod pocztowy</label>
                 </div>
                 <div className="input--parent">
-                  <input type="text" id="input--miasto" name="miasto" className="form__input" required />
+                  <input type="text" id="input--miasto" name="miasto" className="form__input" required onChange={this.handleChange} />
                   <label htmlFor="input--miasto">Miasto</label>
                 </div>
                 <div className="input--parent">
-                  <input type="text" id="input--email" name="email" className="form__input" required />
+                  <input type="text" id="input--email" name="email" className="form__input" required onChange={this.handleChange} />
                   <label htmlFor="input--email">Adres e-mail</label>
                 </div>
                 <div className="input--parent">
-                  <input type="number" id="input--nrtel" name="nrtel" className="form__input" required />
+                  <input type="number" id="input--nrtel" name="nrtel" className="form__input" required onChange={this.handleChange} />
                   <label htmlFor="input--nrtel">Numer tel.</label>
                 </div>
               </div>
