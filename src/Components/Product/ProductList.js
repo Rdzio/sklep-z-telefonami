@@ -7,6 +7,14 @@ import Footer from "../Footer";
 import Product from "./Product";
 
 class ProductList extends React.Component {
+  updateComponent = () => {
+    this.forceUpdate();
+  };
+
+  componentDidMount() {
+    if (document.querySelector(".product-item-space") === null)
+      setTimeout(this.updateComponent, 1000);
+  }
   render() {
     const { items } = this.props;
 
