@@ -20,8 +20,6 @@ class Details extends React.Component {
     }
     return (
       <div>
-        {console.log(itemDetails)}
-
         <Header />
         <div className="container">
           <div className="details-space">
@@ -29,7 +27,7 @@ class Details extends React.Component {
               <div className="details-flex-img">
                 <img
                   className="details-center details-img"
-                  src={require("../../img/phone.png")}
+                  src={require(`../../img/phones/${itemDetails.title.toLowerCase().split(' ').join('')}.jpg`)}
                   alt=""
                 ></img>
               </div>
@@ -82,17 +80,17 @@ class Details extends React.Component {
             <ul className="details-list details-specifications">
               <li>
                 <p className="details-p22">
-                  System operacyjny: <strong></strong>
+                  System operacyjny: <strong>{itemDetails.os}</strong>
                 </p>
               </li>
               <li>
                 <p className="details-p22">
-                  Kolor: <strong></strong>
+                  Kolor: <strong>{itemDetails.color}</strong>
                 </p>
               </li>
               <li>
                 <p className="details-p22">
-                  Bateria: <strong></strong>
+                  Bateria: <strong>{itemDetails.battery}mAh</strong>
                 </p>
               </li>
               <li>

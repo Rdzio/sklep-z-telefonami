@@ -525,7 +525,7 @@ export const brandList = [
   },
   {
     id: 4,
-    name: "Oppo",
+    name: "Sony",
   },
   {
     id: 5,

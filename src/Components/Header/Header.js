@@ -39,6 +39,9 @@ export class Header extends React.Component {
           </NavLink>
 
           <div className="links">
+            <NavLink to="/telefony" className="navbar-buttons">
+              Przeglądaj telefony
+            </NavLink>
             <NavLink to="/" className="navbar-buttons">
               Strona Główna
             </NavLink>

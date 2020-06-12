@@ -5,6 +5,7 @@ import { slide as Menu } from "react-burger-menu";
 export default (props) => {
   return (
     <Menu className="sidebar">
+      <NavLink to="/telefony" className="menu-item">Przeglądaj telefony</NavLink>
       <NavLink to="/" className="menu-item">Strona główna</NavLink>
       <NavLink to="/kontakt" className="menu-item">Kontakt</NavLink>
       <NavLink to="/regulamin" className="menu-item">Regulamin</NavLink>

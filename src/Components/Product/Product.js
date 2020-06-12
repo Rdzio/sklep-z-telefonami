@@ -55,7 +55,6 @@ class Product extends React.Component {
           src={require(`../../img/phones/${this.props.img}`)}
           alt="telefon"
         ></img>
-        {console.log(this.props.img)}
         <h2 className="product-h2">{title}</h2>
         <ul className="product-list">
           <li>

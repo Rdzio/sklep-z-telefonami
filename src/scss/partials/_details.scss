@@ -13,6 +13,7 @@
 
 .details-img {
   margin-bottom: 40px;
+  max-height: 200px;
 }
 
 .details-header {
@@ -67,6 +68,10 @@
 }
 
 @media (min-width: 576px) and (max-width: 1299px) {
+  .details-img {
+    max-height: 300px;
+  }
+
   .details-header {
     font-size: 40px;
   }
@@ -86,6 +91,10 @@
 }
 
 @media (min-width: 1300px) {
+  .details-img {
+    max-height: 300px;
+  }
+
   .details-header {
     font-size: 40px;
   }
@@ -118,6 +127,6 @@
   }
 
   .details-flex-info {
-    transform: translateX(-130px);
+    transform: translateX(-65px);
   }
 }

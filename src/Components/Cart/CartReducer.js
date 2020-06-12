@@ -5,11 +5,14 @@
 import { db } from "../../Firebase/Firebase";
 let ref = db.ref("telefony");
 const telefony = [];
+let i = 0;
 ref.on("value", (obiekt) => {
   const obj = obiekt.val();
   for (let prop in obj) {
     for (let key in obj[prop]) {
       telefony.push(obj[prop][key]);
+      telefony[i].vendor = prop;
+    i++;
     }
   }
 });
@@ -24,10 +27,13 @@ import { database } from "../../database.js";
 import { polecane } from "../../polecane.js";
 
 // for local testing
+let i = 0;
 const telefony = [];
 for (let prop in database) {
   for (let key in database[prop]) {
     telefony.push(database[prop][key]);
+    telefony[i].vendor = prop;
+    i++;
   }
 }
 

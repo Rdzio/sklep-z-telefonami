@@ -1,17 +1,87 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import Header from "../Header/Header";
+import Footer from "../Footer";
+
 import Product from "./Product";
 
 class ProductList extends React.Component {
   render() {
+    const { items } = this.props;
+
+    // const Test = () => {
+    //   if (this.props.match.params.vendor === undefined) {
+    //     console.log("undefined");
+    //     items.map((product) => {
+    //       return (
+    //         <Product
+    //           key={product.id}
+    //           product={product}
+    //           img={`${product.title.toLowerCase().split(" ").join("")}.jpg`}
+    //         />
+    //       );
+    //     });
+    //   } else {
+    //     console.log(this.props.match.params.vendor);
+    //     items
+    //       .filter((item) => this.props.match.params.vendor === item.vendor)
+    //       .map((product) => {
+    //         return (
+    //           <Product
+    //             key={product.id}
+    //             product={product}
+    //             img={`${product.title.toLowerCase().split(" ").join("")}.jpg`}
+    //           />
+    //         );
+    //       });
+    //   }
+    // };
+
     return (
-      <div className="product-space">
-        {console.log(this.props.recommended)}
-        <h1 className="product-h1">Polecamy w tym miesiącu</h1>
-        {this.props.items.map((product) => {
-          return <Product key={product.id} product={product} />;
-        })}
+      <div>
+        <div>
+          <Header />
+        </div>
+        <div className="glowna">
+          <div className="product-space">
+            <h1 className="product-h1">
+              Nasze telefony {this.props.match.params.vendor}
+            </h1>
+            {this.props.match.params.vendor
+              ? items
+                  .filter(
+                    (item) => this.props.match.params.vendor === item.vendor
+                  )
+                  .map((product) => {
+                    return (
+                      <Product
+                        key={product.id}
+                        product={product}
+                        img={`${product.title
+                          .toLowerCase()
+                          .split(" ")
+                          .join("")}.jpg`}
+                      />
+                    );
+                  })
+              : items.map((product) => {
+                  return (
+                    <Product
+                      key={product.id}
+                      product={product}
+                      img={`${product.title
+                        .toLowerCase()
+                        .split(" ")
+                        .join("")}.jpg`}
+                    />
+                  );
+                })}
+            <div className="container">
+              <Footer />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -20,7 +90,6 @@ class ProductList extends React.Component {
 const mapStateToProps = (state) => {
   return {
     items: state.items,
-    recommended: state.recommended,
   };
 };
 

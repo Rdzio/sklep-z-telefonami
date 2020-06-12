@@ -7,6 +7,7 @@ import Regulamin from "./Regulamin";
 import Cart from "./components/Cart/Cart";
 import ThankYou from "./ThankYou";
 import Details from "./components/Product/Details";
+import ProductList from "./components/Product/ProductList";
 import NotFound from "./components/NotFound";
 
 class App extends React.Component {
@@ -14,13 +15,15 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <Switch>
+          <Route path="/telefony/:vendor" component={ProductList} />
+          <Route path="/telefony/" component={ProductList} />
           <Route path="/szczegoly/:id/" component={Details} />
           <Route path="/koszyk" component={Cart} />
           <Route path="/dziekujemy" component={ThankYou} />
           <Route path="/regulamin" component={Regulamin} />
           <Route path="/kontakt" component={Kontakt} />
           <Route path="/" component={HomePage} exact />
-          <Route path="*" component={NotFound} exact/>
+          <Route path="*" component={NotFound}/>
         </Switch>
       </BrowserRouter>
     );

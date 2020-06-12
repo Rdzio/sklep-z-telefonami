@@ -31,6 +31,7 @@ class Slide extends Component {
               li3="Snapdragon 865 + 8GB RAM"
               li4="Głośniki stereo"
               li5="24 miesiące gwarancji na ekran"
+              id="5"
             />
             </div>
           </div>
@@ -45,6 +46,7 @@ class Slide extends Component {
               li3="Snapdragon 865 + 8GB RAM"
               li4="Sieć 5G"
               li5="24 miesiące gwarancji na ekran"
+              id="1"
             />
             </div>
           </div>
@@ -59,6 +61,7 @@ class Slide extends Component {
               li3="Tryb portretowy"
               li4="FaceID"
               li5="24 miesiące gwarancji na ekran"
+              id="17"
             />
             </div>
           </div>
