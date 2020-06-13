@@ -1,8 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-
-// import { NavLink } from "react-router-dom";
+import LazyLoad from "react-lazyload";
 
 import { addToCart } from "../Cart/CartActions";
 
@@ -50,11 +49,21 @@ class Product extends React.Component {
     } = this.props.product;
     return (
       <div className="border border-dark product-item-space">
-        <img
-          className="product-center product-image"
-          src={require(`../../img/phones/${this.props.img}`)}
-          alt="telefon"
-        ></img>
+        <LazyLoad
+          once={true}
+          placeholder={
+            <img
+              src={require(`../../img/phones/low_${this.props.img}`)}
+              alt="..."
+            />
+          }
+        >
+          <img
+            className="product-center product-image"
+            src={require(`../../img/phones/${this.props.img}`)}
+            alt="telefon"
+          ></img>
+        </LazyLoad>
         <h2 className="product-h2">{title}</h2>
         <ul className="product-list">
           <li>

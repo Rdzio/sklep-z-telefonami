@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import LazyLoad from "react-lazyload";
 
 import Header from "../Header/Header";
 import Footer from "../Footer";
@@ -63,6 +64,21 @@ class ProductList extends React.Component {
                   )
                   .map((product) => {
                     return (
+                      <LazyLoad placeholder={"Ładowanie..."}>
+                        <Product
+                          key={product.id}
+                          product={product}
+                          img={`${product.title
+                            .toLowerCase()
+                            .split(" ")
+                            .join("")}.jpg`}
+                        />
+                      </LazyLoad>
+                    );
+                  })
+              : items.map((product) => {
+                  return (
+                    <LazyLoad placeholder={"Ładowanie..."}>
                       <Product
                         key={product.id}
                         product={product}
@@ -71,18 +87,7 @@ class ProductList extends React.Component {
                           .split(" ")
                           .join("")}.jpg`}
                       />
-                    );
-                  })
-              : items.map((product) => {
-                  return (
-                    <Product
-                      key={product.id}
-                      product={product}
-                      img={`${product.title
-                        .toLowerCase()
-                        .split(" ")
-                        .join("")}.jpg`}
-                    />
+                    </LazyLoad>
                   );
                 })}
             <div className="container">

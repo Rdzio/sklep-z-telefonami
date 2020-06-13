@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { addToCart } from "../Cart/CartActions";
 import { Redirect } from "react-router-dom";
+import LazyLoad from "react-lazyload";
 
 import Header from "../Header/Header";
 import Footer from "../Footer";
@@ -25,11 +26,29 @@ class Details extends React.Component {
           <div className="details-space">
             <div className="details-flex-container">
               <div className="details-flex-img">
-                <img
-                  className="details-center details-img"
-                  src={require(`../../img/phones/${itemDetails.title.toLowerCase().split(' ').join('')}.jpg`)}
-                  alt=""
-                ></img>
+                <LazyLoad
+                  once={true}
+                  placeholder={
+                    <img
+                      src={require(
+                        `../../img/phones/low_${itemDetails.title
+                          .toLowerCase()
+                          .split(" ")
+                          .join("")}.jpg`
+                      )}
+                      alt="..."
+                    />
+                  }
+                >
+                  <img
+                    className="details-center details-img"
+                    src={require(`../../img/phones/${itemDetails.title
+                      .toLowerCase()
+                      .split(" ")
+                      .join("")}.jpg`)}
+                    alt=""
+                  ></img>
+                </LazyLoad>
               </div>
               <div className="details-flex-info">
                 <h2 className="details-center details-header">

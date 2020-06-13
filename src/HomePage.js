@@ -1,12 +1,24 @@
-import React, { Component } from "react";
+import React, { Component, lazy, Suspense } from "react";
 
 import Header from "./components/Header/Header";
-import Slide from "./components/Slide/Slide";
-import RecommendedList from "./components/Product/RecommendedList";
-import BrandList from "./components/Brand/BrandList";
-import Advertisement from "./components/Advertisement";
-import CustomerList from "./components/Customer/CustomerList";
+// import Slide from "./components/Slide/Slide";
+// import RecommendedList from "./components/Product/RecommendedList";
+// import BrandList from "./components/Brand/BrandList";
+// import Advertisement from "./components/Advertisement";
+// import CustomerList from "./components/Customer/CustomerList";
 import Footer from "./components/Footer";
+
+const Slide = lazy(() => import("./components/Slide/Slide"));
+const RecommendedList = lazy(() =>
+  import("./components/Product/RecommendedList")
+);
+const BrandList = lazy(() => import("./components/Brand/BrandList"));
+const Advertisement = lazy(() => import("./components/Advertisement"));
+const CustomerList = lazy(() => import("./components/Customer/CustomerList"));
+
+// const RecommendedList = lazy(() =>
+//   import("./components/Product/RecommendedList")
+// );
 
 class HomePage extends Component {
   render() {
@@ -14,13 +26,17 @@ class HomePage extends Component {
       <div>
         <div>
           <Header />
-          <Slide />
+          <Suspense fallback={<h1>Ładowanie</h1>}>
+            <Slide />
+          </Suspense>
         </div>
         <div className="glowna">
-          <RecommendedList />
-          <BrandList />
-          <Advertisement />
-          <CustomerList />
+          <Suspense fallback={<h1>Ładowanie</h1>}>
+            <RecommendedList />
+            <BrandList />
+            <Advertisement />
+            <CustomerList />
+          </Suspense>
           <div className="container">
             <Footer />
           </div>

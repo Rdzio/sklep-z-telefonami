@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import LazyLoad from "react-lazyload";
 
 import Product from "./Product";
 
@@ -21,11 +22,13 @@ class RecommendedList extends React.Component {
           .filter((prop) => this.props.recommended.includes(prop.id))
           .map((product) => {
             return (
-              <Product
-                key={product.id}
-                product={product}
-                img={`${product.title.toLowerCase().split(" ").join("")}.jpg`}
-              />
+              <LazyLoad placeholder={"Ładowanie..."}>
+                <Product
+                  key={product.id}
+                  product={product}
+                  img={`${product.title.toLowerCase().split(" ").join("")}.jpg`}
+                />
+              </LazyLoad>
             );
           })}
       </div>
