@@ -13,6 +13,7 @@ import NotFound from "./components/NotFound";
 class App extends React.Component {
   render() {
     return (
+      // app routing
       <BrowserRouter>
         <Switch>
           <Route path="/telefony/:vendor" component={ProductList} />
@@ -23,7 +24,7 @@ class App extends React.Component {
           <Route path="/regulamin" component={Regulamin} />
           <Route path="/kontakt" component={Kontakt} />
           <Route path="/" component={HomePage} exact />
-          <Route path="*" component={NotFound}/>
+          <Route path="*" component={NotFound} />
         </Switch>
       </BrowserRouter>
     );

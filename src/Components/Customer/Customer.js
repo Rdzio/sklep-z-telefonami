@@ -1,7 +1,7 @@
 import React from "react";
 
+// single comment
 class Customer extends React.Component {
-
   render() {
     return (
       <div className={"customer "}>

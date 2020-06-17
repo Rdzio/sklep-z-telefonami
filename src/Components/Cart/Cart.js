@@ -9,6 +9,7 @@ import "../../scss/partials/kontakt.scss";
 import Header from "../Header/Header";
 import Footer from "../Footer";
 
+// main cart component
 class Cart extends Component {
   constructor(props) {
     super(props);
@@ -32,10 +33,12 @@ class Cart extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
+    // select database region to work with
     const rootRef = db.ref('zamowienia');
 
     const { delivery, email, imie, kod, miasto, nrtel, ulica, zaplacono, data, zamowienie} = this.state;
 
+    // send data to database
     rootRef.push().set({
       dostawa: delivery,
       email: email,
@@ -51,6 +54,7 @@ class Cart extends Component {
   }
 
   handleClick = () => {
+    // calculate delivery cost
     this.props.total > 999 ? this.setState({delivery: "Za darmo!"}) : this.setState({delivery: "20zł"});
   }
 
@@ -73,36 +77,37 @@ class Cart extends Component {
     this.setState({zamowienie: order});
   }
 
-  //to remove the item completely
+  // to remove the item completely
   handleRemove = (id) => {
     this.props.removeItem(id);
     this.setOrder();
     this.setState({zaplacono: this.props.total});
   };
-  //to add the quantity
+
+  // to add the quantity
   handleAddQuantity = (id) => {
     this.props.addQuantity(id);
     this.setOrder();
     this.setState({zaplacono: this.props.total});
   };
-  //to substruct from the quantity
+
+  // to substruct from the quantity
   handleSubtractQuantity = (id) => {
     this.props.subtractQuantity(id);
     this.setOrder();
     this.setState({zaplacono: this.props.total});
   };
 
+  // control proceed button acive/inactive state
   componentDidUpdate() {
     if (this.props.total > 0)
       document.querySelector(".basket-proceed").disabled = false;
     else document.querySelector(".basket-proceed").disabled = true;
   }
-
   componentDidMount() {
     if (this.props.total > 0)
       document.querySelector(".basket-proceed").disabled = false;
     else document.querySelector(".basket-proceed").disabled = true;
-
     this.props.total > 999 ? this.setState({delivery: "Za darmo!"}) : this.setState({delivery: "20zł"});
   }
 
@@ -225,6 +230,7 @@ class Cart extends Component {
   }
 }
 
+// set redux data to props
 const mapStateToProps = (state) => {
   return {
     items: state.addedItems,
@@ -232,6 +238,7 @@ const mapStateToProps = (state) => {
   };
 };
 
+// send data do cart reducer
 const mapDispatchToProps = (dispatch) => {
   return {
     removeItem: (id) => {
@@ -245,4 +252,6 @@ const mapDispatchToProps = (dispatch) => {
     },
   };
 };
+
+// connect to redux
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);

@@ -1,6 +1,6 @@
 import React from "react";
-import LazyLoad from "react-lazyload";
 
+// prepare slider image
 class Image extends React.Component {
   render() {
     return (

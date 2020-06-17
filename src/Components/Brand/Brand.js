@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+// single button with containing brand name
 class Brand extends Component {
   render() {
-    const { name, vendor } = this.props.brand;
+    const { name } = this.props.brand;
     return (
+      // create route to item list with filter applied
       <Link
         className=""
         to={{
-          pathname:
-            `/telefony/` + name.toLowerCase().split(" ").join("-"),
+          pathname: `/telefony/` + name.toLowerCase().split(" ").join("-"),
         }}
       >
         <button

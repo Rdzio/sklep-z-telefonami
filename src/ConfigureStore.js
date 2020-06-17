@@ -4,9 +4,9 @@ import storage from "redux-persist/lib/storage";
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2'
 // import hardSet from 'redux-persist/lib/stateReconciler/hardSet'
 
-
 import CartReducer from "./components/Cart/CartReducer";
 
+// redux persist configuration file
 const persistConfig = {
   key: "root",
   storage,

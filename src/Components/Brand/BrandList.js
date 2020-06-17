@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Brand from "./Brand";
 import { brandList } from "../../data";
 
+// render all brand buttons
 export default class ProductList extends Component {
   render() {
     return (

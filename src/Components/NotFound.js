@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Header from "./Header/Header";
 import Footer from "./Footer";
 
+// error page
 class NotFound extends React.Component {
   render() {
     return (
@@ -18,7 +19,7 @@ class NotFound extends React.Component {
             <p className="notfound-p">
               Prawdopodobnie kliknąłeś w błędny lub stary link. Jeżeli widzisz
               ten komunikat po kliknięciu łącza na naszej witrynie poinformuj
-              nas o tym :)
+              nas o tym.
             </p>
             <Link
               to={{

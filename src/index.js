@@ -8,6 +8,8 @@ import "./scss/style.scss";
 import App from "./App";
 
 ReactDOM.render(
+  // make store avabile to any nested components
+  // delay loading app, until persisted state is loaded/saved
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <App />

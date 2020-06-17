@@ -5,6 +5,7 @@ export const addToCart = (id) => {
     id,
   };
 };
+
 //remove item action
 export const removeItem = (id) => {
   return {
@@ -12,6 +13,7 @@ export const removeItem = (id) => {
     id,
   };
 };
+
 //subtract qt action
 export const subtractQuantity = (id) => {
   return {
@@ -19,6 +21,7 @@ export const subtractQuantity = (id) => {
     id,
   };
 };
+
 //add qt action
 export const addQuantity = (id) => {
   return {

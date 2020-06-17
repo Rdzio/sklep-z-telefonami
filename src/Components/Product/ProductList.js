@@ -7,46 +7,20 @@ import Footer from "../Footer";
 
 import Product from "./Product";
 
+// render all products
 class ProductList extends React.Component {
+  // update component
   updateComponent = () => {
     this.forceUpdate();
   };
 
+  // check for rendered products
   componentDidMount() {
     if (document.querySelector(".product-item-space") === null)
       setTimeout(this.updateComponent, 1000);
   }
   render() {
     const { items } = this.props;
-
-    // const Test = () => {
-    //   if (this.props.match.params.vendor === undefined) {
-    //     console.log("undefined");
-    //     items.map((product) => {
-    //       return (
-    //         <Product
-    //           key={product.id}
-    //           product={product}
-    //           img={`${product.title.toLowerCase().split(" ").join("")}.jpg`}
-    //         />
-    //       );
-    //     });
-    //   } else {
-    //     console.log(this.props.match.params.vendor);
-    //     items
-    //       .filter((item) => this.props.match.params.vendor === item.vendor)
-    //       .map((product) => {
-    //         return (
-    //           <Product
-    //             key={product.id}
-    //             product={product}
-    //             img={`${product.title.toLowerCase().split(" ").join("")}.jpg`}
-    //           />
-    //         );
-    //       });
-    //   }
-    // };
-
     return (
       <div>
         <div>
@@ -100,10 +74,12 @@ class ProductList extends React.Component {
   }
 }
 
+// set redux data to props
 const mapStateToProps = (state) => {
   return {
     items: state.items,
   };
 };
 
+// connect to redux
 export default connect(mapStateToProps)(ProductList);

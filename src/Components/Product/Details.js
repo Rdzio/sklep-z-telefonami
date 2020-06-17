@@ -7,7 +7,9 @@ import LazyLoad from "react-lazyload";
 import Header from "../Header/Header";
 import Footer from "../Footer";
 
+// page with all details about item
 class Details extends React.Component {
+  // handle add to cart action
   handleClick = (id) => {
     this.props.addToCart(id);
   };
@@ -30,12 +32,10 @@ class Details extends React.Component {
                   once={true}
                   placeholder={
                     <img
-                      src={require(
-                        `../../img/phones/low_${itemDetails.title
-                          .toLowerCase()
-                          .split(" ")
-                          .join("")}.jpg`
-                      )}
+                      src={require(`../../img/phones/low_${itemDetails.title
+                        .toLowerCase()
+                        .split(" ")
+                        .join("")}.jpg`)}
                       alt="..."
                     />
                   }
@@ -146,12 +146,14 @@ class Details extends React.Component {
   }
 }
 
+// set redux data to props
 const mapStateToProps = (state) => {
   return {
     items: state.items,
   };
 };
 
+// send data do cart reducer
 const mapDispatchToProps = (dispatch) => {
   return {
     addToCart: (id) => {
@@ -160,4 +162,5 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
+// connect to redux
 export default connect(mapStateToProps, mapDispatchToProps)(Details);

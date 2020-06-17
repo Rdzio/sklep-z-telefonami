@@ -3,9 +3,9 @@ import "../src/scss/partials/kontakt.scss";
 import { NavLink } from "react-router-dom";
 
 import Header from "./components/Header/Header";
-
 import Footer from "./components/Footer";
 
+// greetings page
 class ThankYou extends Component {
   render() {
     return (

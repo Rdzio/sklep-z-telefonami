@@ -4,11 +4,14 @@ import LazyLoad from "react-lazyload";
 
 import Product from "./Product";
 
+// render all recomended products
 class RecommendedList extends React.Component {
+  // update component
   updateComponent = () => {
     this.forceUpdate();
   };
 
+  // check for rendered products
   componentDidMount() {
     if (document.querySelector(".product-item-space") === null)
       setTimeout(this.updateComponent, 1000);
@@ -36,6 +39,7 @@ class RecommendedList extends React.Component {
   }
 }
 
+// set redux data to props
 const mapStateToProps = (state) => {
   return {
     items: state.items,
@@ -43,4 +47,5 @@ const mapStateToProps = (state) => {
   };
 };
 
+// connect to redux
 export default connect(mapStateToProps)(RecommendedList);

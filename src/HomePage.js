@@ -1,11 +1,6 @@
 import React, { Component, lazy, Suspense } from "react";
 
 import Header from "./components/Header/Header";
-// import Slide from "./components/Slide/Slide";
-// import RecommendedList from "./components/Product/RecommendedList";
-// import BrandList from "./components/Brand/BrandList";
-// import Advertisement from "./components/Advertisement";
-// import CustomerList from "./components/Customer/CustomerList";
 import Footer from "./components/Footer";
 
 const Slide = lazy(() => import("./components/Slide/Slide"));

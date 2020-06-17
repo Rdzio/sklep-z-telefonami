@@ -6,8 +6,10 @@ import "slick-carousel/slick/slick.css";
 import Image from "./Image";
 import Banner from "./Banner";
 
+// render slider
 class Slide extends Component {
   render() {
+    // slider configuration
     const settings = {
       infinite: true,
       dots: true,

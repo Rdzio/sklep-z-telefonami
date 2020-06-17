@@ -4,18 +4,27 @@ import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 
 export class Header extends React.Component {
+  
+  // control item counter visibility
   componentDidUpdate() {
     if (this.props.itemsAdded > 0)
-      document.querySelector(".navbar-item-counter").classList.remove("navbar-item-counter-inactive");
+      document
+        .querySelector(".navbar-item-counter")
+        .classList.remove("navbar-item-counter-inactive");
     else
-      document.querySelector(".navbar-item-counter").classList.add("navbar-item-counter-inactive");
+      document
+        .querySelector(".navbar-item-counter")
+        .classList.add("navbar-item-counter-inactive");
   }
-
   componentDidMount() {
     if (this.props.itemsAdded > 0)
-      document.querySelector(".navbar-item-counter").classList.remove("navbar-item-counter-inactive");
+      document
+        .querySelector(".navbar-item-counter")
+        .classList.remove("navbar-item-counter-inactive");
     else
-      document.querySelector(".navbar-item-counter").classList.add("navbar-item-counter-inactive");
+      document
+        .querySelector(".navbar-item-counter")
+        .classList.add("navbar-item-counter-inactive");
   }
 
   render() {

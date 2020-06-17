@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+// footer component
 class Footer extends React.Component {
   render() {
     return (

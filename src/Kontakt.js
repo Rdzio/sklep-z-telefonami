@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 
 import Footer from "./components/Footer";
 
+// contact page
 class Kontakt extends Component {
   render() {
     return (

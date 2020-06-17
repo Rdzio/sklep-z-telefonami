@@ -5,6 +5,7 @@ import LazyLoad from "react-lazyload";
 
 import { addToCart } from "../Cart/CartActions";
 
+// single product component
 class Product extends React.Component {
   constructor(props) {
     super(props);
@@ -14,25 +15,12 @@ class Product extends React.Component {
     };
   }
 
-  handleClick = (id) => {
+  // handle add to cart action
+  handleClickDetails = (id) => {
     this.props.addToCart(id);
-    this.setState({ id: id });
-    alert("Dodano do koszyka!");
   };
 
-  // componentDidMount() {
-  //   document.querySelector(`#add-to-basket--${this.state.id}`)
-  //           .addEventListener('click', (prop) => {this.spawnAnimatedWord(prop)});
-  // }
-
-  // spawnAnimatedWord = (prop) => {
-  //   let infoBox = document.querySelector(`#add-to-basket--${this.state.id}-info`);
-  //   this.setState({position: {x: prop.pageX, y: prop.pageY}});
-  //   infoBox.style.top = `${this.state.position.y - infoBox.clientHeight / 2}px`;
-  //   infoBox.style.left = `${this.state.position.x - infoBox.clientWidth / 2}px`;
-  // }
-
-  handleClickDetails = (id) => {
+  handleClick = (id) => {
     this.props.addToCart(id);
   };
 
@@ -122,19 +110,19 @@ class Product extends React.Component {
         >
           Dodaj do koszyka
         </button>
-        {/* <p className="added-to-basket--info" id={`add-to-basket--${id}-info`}>
-          Dodano do koszyka!
-        </p> */}
       </div>
     );
   }
 }
 
+// set redux data to props
 const mapStateToProps = (state) => {
   return {
     items: state.items,
   };
 };
+
+// send data do cart reducer
 const mapDispatchToProps = (dispatch) => {
   return {
     addToCart: (id) => {
@@ -143,4 +131,5 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
+// connect to redux
 export default connect(mapStateToProps, mapDispatchToProps)(Product);

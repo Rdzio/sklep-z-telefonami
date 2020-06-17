@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// display text on slider
 class Banner extends React.Component {
   render() {
     return (

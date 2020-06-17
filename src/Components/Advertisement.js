@@ -1,5 +1,6 @@
 import React from "react";
 
+// render shop advertisement
 class Advertisement extends React.Component {
   render() {
     return (
